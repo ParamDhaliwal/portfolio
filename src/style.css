@@ -87,6 +87,27 @@ p {
     color: #808080;
 }
 
+.button-resume {
+    width: 120px;
+    height: 30px;
+    border-radius: 30px;
+    background-color: #4e5f79;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 300;
+    padding: 5px;
+    margin-top: 20px;
+}
+
+.button-resume:hover {
+    background-color: #24344d;
+}
+
+.button-resume:active {
+    background-color: #1f2022;
+    color: #808080;
+}
+
 .socials {
     padding-bottom: 200px;
     margin-top: 200px;
@@ -132,6 +153,11 @@ p {
 
 .info-about {
     font-size: 30px;
+    padding: 16px;
+}
+
+.about-href {
+    color: #4e5f79;
 }
 
 .project-card {
