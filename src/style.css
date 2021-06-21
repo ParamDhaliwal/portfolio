@@ -88,13 +88,13 @@ p {
 }
 
 .button-resume {
-    width: 120px;
-    height: 30px;
+    width: 140px;
+    height: 36px;
     border-radius: 30px;
     background-color: #4e5f79;
     text-align: center;
-    font-size: 20px;
-    font-weight: 300;
+    font-size: 24px;
+    font-weight: 400;
     padding: 5px;
     margin-top: 20px;
 }
@@ -108,10 +108,62 @@ p {
     color: #808080;
 }
 
-.socials {
-    padding-bottom: 200px;
-    margin-top: 200px;
+.social{
+	position: fixed;
+	top:60%;
+	right:0px;
+	transform:translateY(-50%);
 }
+.social a{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width:50px;
+	height:50px;
+	margin:4px;
+	padding: 5px;
+	background-color:#1c1d25;
+	box-shadow:2px 2px 12px rgba(0,0,0,0.2);
+    border-radius: 20px;
+}
+.social a:hover{
+	background-color:coral;
+	transition:all ease 0.5s;
+}
+.social i{
+	font-size:20px;
+	color:#2B2B2B;
+}
+
+/* .social-icon {
+    background-color: black;
+    display: flex;
+    align-items: center;
+}
+
+.social-icon a{
+	width:40px;
+	height:40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color:#e6e3e3;
+	margin:20px 10px;
+	border-radius: 20%;
+}
+
+.social-icon i {
+	color:#000000;
+}
+.social-icon a:hover{
+	background-color:#000000;
+	box-shadow:2px 2px 12px rgba(0,0,0,0.2);
+	transition:all ease 0.5s;
+}
+.social-icon a:hover i {
+	color:#FFFFFF;
+	transition:all ease 0.5s;
+} */
 
 .logo {
     height: 80px;
@@ -121,10 +173,6 @@ p {
 .logo1 {
     height: 60px;
     margin-top: 20px;
-}
-
-.social {
-    margin: 20px;
 }
 
 .sub-section {
