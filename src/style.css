@@ -126,10 +126,27 @@ p {
 	box-shadow:2px 2px 12px rgba(0,0,0,0.2);
     border-radius: 20px;
 }
-.social a:hover{
+
+/* .social a:hover{
 	background-color:coral;
 	transition:all ease 0.5s;
+} */
+
+.social-git a:hover{
+	background-color: #1c1d25;
+	transition:all ease 0.5s;
 }
+
+.social-linked-in a:hover{
+	background-color:blue;
+	transition:all ease 0.5s;
+}
+
+.social-gmail a:hover{
+	background-color:red;
+	transition:all ease 0.5s;
+}
+
 .social i{
 	font-size:20px;
 	color:#2B2B2B;
