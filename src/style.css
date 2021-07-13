@@ -133,11 +133,11 @@ p {
 } */
 
 .social-git a:hover{
-	background-color: #1c1d25;
+	background-color: #CFCFCF;
 	transition:all ease 0.5s;
 }
 
-.social-linked-in a:hover{
+.social-linkedin a:hover{
 	background-color:blue;
 	transition:all ease 0.5s;
 }
