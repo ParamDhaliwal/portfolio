@@ -29,6 +29,7 @@ footer {
 h1 {
     font-size: 80px;
     margin: 0;
+    position: sticky; top: 0;
 }
 
 h2 {
@@ -217,7 +218,7 @@ p {
 }
 
 .info-about {
-    font-size: 30px;
+    font-size: 24px;
     padding: 16px;
 }
 
