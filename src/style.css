@@ -29,7 +29,6 @@ footer {
 h1 {
     font-size: 80px;
     margin: 0;
-    position: sticky; top: 0;
 }
 
 h2 {
@@ -65,6 +64,7 @@ p {
 .hero-text {
     margin-left: 80px;
     margin-top: 10px;
+    position: sticky; top: 0;
 }
 
 .button {
