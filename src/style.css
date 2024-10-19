@@ -61,8 +61,7 @@ footer {
 }
 
 .skills-tools {
-    margin-top: 20px; /* Add space above Skills & Tools section */
-    background-color: #24252e; /* Optional: Add a slightly lighter background color */
+    margin-top: 30px; /* Add space above Skills & Tools section */
     border-radius: 10px; /* Optional: Add border-radius for rounded corners */
     padding: 20px; /* Add padding to the box */
 }
@@ -124,17 +123,17 @@ p {
     margin: 10px;
 }
 
-.hero-area {
+/* .hero-area {
     background-color: #1c1d25;
     justify-content: space-between;
-}
+} */
 
-/* .hero-area {
+.hero-area {
     display: flex;
     height: 100%;
     justify-content: space-between;
     align-items: center;
-} */
+}
 
 .hero-text {
     margin-left: 80px;
