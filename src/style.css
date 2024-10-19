@@ -126,8 +126,7 @@ p {
 
 .hero-area {
     background-color: #1c1d25;
-    padding: 20px;
-    margin-right: 50px;
+    justify-content: space-between;
 }
 
 /* .hero-area {
