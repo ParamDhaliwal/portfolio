@@ -64,12 +64,7 @@ footer {
     margin-top: 30px; /* Add space above Skills & Tools section */
     border-radius: 10px; /* Optional: Add border-radius for rounded corners */
     padding: 20px; /* Add padding to the box */
-}
-
-.skills-tools h3 {
-    color: #ffffff;
-    margin-bottom: 15px;
-    text-align: left;
+    margin-left: 20px;
 }
 
 .skills-grid {
@@ -131,7 +126,6 @@ p {
 .hero-area {
     display: flex;
     height: 100%;
-    justify-content: space-between;
     align-items: center;
 }
 
