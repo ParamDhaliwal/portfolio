@@ -77,7 +77,7 @@ footer {
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
-    gap: 40px;
+    gap: 30px;
 }
 
 .skill-item {
@@ -87,7 +87,7 @@ footer {
 }
 
 .skill-logo {
-    max-width: 60px;
+    max-width: 70px;
     transition: transform 0.3s ease, filter 0.3s ease;
     filter: brightness(0.7);
 }
