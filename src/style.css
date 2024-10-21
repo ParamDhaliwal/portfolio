@@ -61,8 +61,9 @@ footer {
 }
 
 .skills-tools {
-    margin-top: 200px; /* Add space above Skills & Tools section */
-    border-radius: 10px; /* Optional: Add border-radius for rounded corners */
+    max-width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .skills-grid {
