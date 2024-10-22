@@ -26,38 +26,39 @@ const roles = [
 
 let i = 0;
 let j = 0;
-let currentRole = '';
 let isDeleting = false;
-const speed = 150; // Typing speed
+const typingSpeed = 150; // Typing speed
+const deletingSpeed = 100; // Deleting speed
+const pauseAfterTyping = 2000; // Pause after fully typing a word
+const pauseBeforeNextWord = 500; // Pause before starting the next word
 
 function type() {
     const dynamicText = document.querySelector('.dynamic-text');
 
-    if (i < roles.length) {
-        if (!isDeleting && j <= roles[i].length) {
-            currentRole = roles[i].substring(0, j);
-            dynamicText.innerHTML = currentRole;
-            j++;
-        }
+    if (!isDeleting && j <= roles[i].length) {
+        // Typing forward
+        dynamicText.innerHTML = roles[i].substring(0, j);
+        j++;
+        setTimeout(type, typingSpeed);
+    } else if (isDeleting && j >= 0) {
+        // Deleting backwards
+        dynamicText.innerHTML = roles[i].substring(0, j);
+        j--;
+        setTimeout(type, deletingSpeed);
+    } 
 
-        if (isDeleting && j <= roles[i].length) {
-            currentRole = roles[i].substring(0, j);
-            dynamicText.innerHTML = currentRole;
-            j--;
-        }
-
-        if (j === roles[i].length) {
-            isDeleting = true;
-            setTimeout(type, 2000); // Wait before backspacing
-        } else if (j === 0 && isDeleting) {
-            isDeleting = false;
-            i++;
-            if (i === roles.length) {
-                i = 0;
-            }
-        }
+    // Pause after typing a word
+    if (j === roles[i].length && !isDeleting) {
+        isDeleting = true;
+        setTimeout(type, pauseAfterTyping);
     }
-    setTimeout(type, isDeleting ? speed / 2 : speed);
+
+    // Pause before typing the next word
+    if (j === 0 && isDeleting) {
+        isDeleting = false;
+        i = (i + 1) % roles.length; // Move to the next role
+        setTimeout(type, pauseBeforeNextWord);
+    }
 }
 
 document.addEventListener('DOMContentLoaded', type);
