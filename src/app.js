@@ -24,40 +24,47 @@ const roles = [
     'Technical Consultant'
 ];
 
-let i = 0;
-let j = 0;
+let i = 0; // Index for the current role
+let j = 0; // Index for the current letter of the role
 let isDeleting = false;
-const typingSpeed = 150; // Typing speed
-const deletingSpeed = 100; // Deleting speed
-const pauseAfterTyping = 2000; // Pause after fully typing a word
-const pauseBeforeNextWord = 500; // Pause before starting the next word
+const typingSpeed = 150; // Speed for typing characters
+const deletingSpeed = 100; // Speed for deleting characters
+const pauseAfterTyping = 2000; // Pause after typing a word
+const pauseBeforeNextWord = 500; // Pause before starting to type the next word
 
 function type() {
     const dynamicText = document.querySelector('.dynamic-text');
-
-    if (!isDeleting && j <= roles[i].length) {
+    const currentRole = roles[i];
+    
+    if (!isDeleting) {
         // Typing forward
-        dynamicText.innerHTML = roles[i].substring(0, j);
+        dynamicText.textContent = currentRole.substring(0, j);
         j++;
-        setTimeout(type, typingSpeed);
-    } else if (isDeleting && j >= 0) {
-        // Deleting backwards
-        dynamicText.innerHTML = roles[i].substring(0, j);
+        
+        if (j === currentRole.length) {
+            // Word is fully typed, pause before deleting
+            setTimeout(() => {
+                isDeleting = true;
+                type();
+            }, pauseAfterTyping);
+        } else {
+            // Continue typing
+            setTimeout(type, typingSpeed);
+        }
+    } else {
+        // Deleting backward
+        dynamicText.textContent = currentRole.substring(0, j);
         j--;
-        setTimeout(type, deletingSpeed);
-    } 
-
-    // Pause after typing a word
-    if (j === roles[i].length && !isDeleting) {
-        isDeleting = true;
-        setTimeout(type, pauseAfterTyping);
-    }
-
-    // Pause before typing the next word
-    if (j === 0 && isDeleting) {
-        isDeleting = false;
-        i = (i + 1) % roles.length; // Move to the next role
-        setTimeout(type, pauseBeforeNextWord);
+        
+        if (j === 0) {
+            // Word is fully deleted, move to the next role and start typing
+            isDeleting = false;
+            i = (i + 1) % roles.length; // Loop back to the first role after the last one
+            setTimeout(type, pauseBeforeNextWord);
+        } else {
+            // Continue deleting
+            setTimeout(type, deletingSpeed);
+        }
     }
 }
 
