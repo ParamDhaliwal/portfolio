@@ -346,6 +346,43 @@ p {
     color: #333;
 } */
 
+/* Tooltip styling */
+.tooltip {
+    position: absolute;
+    bottom: 100%; /* Position above the card */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.75); /* Dark background */
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    white-space: nowrap; /* Ensure the text is in one line */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s;
+    z-index: 10;
+    pointer-events: none; /* Prevent hover events from interacting with tooltip */
+}
+
+/* Tooltip arrow */
+.tooltip::after {
+    content: "";
+    position: absolute;
+    top: 100%; /* At the bottom of the tooltip */
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.75) transparent transparent transparent;
+}
+
+/* Show tooltip on hover */
+.project-card:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+
 .nav-heading {
     display: none;
 }
