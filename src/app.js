@@ -35,25 +35,25 @@ const pauseBeforeNextWord = 500; // Pause before typing the next word
 function type() {
     const dynamicText = document.querySelector('.dynamic-text');
     const currentRole = roles[i];
-    
-    if (!isDeleting && j <= currentRole.length) {
+
+    if (!isDeleting) {
         // Typing forward
-        dynamicText.textContent = currentRole.substring(0, j);
+        dynamicText.textContent = currentRole.substring(0, j + 1);  // Display up to j+1 characters
         j++;
 
         if (j === currentRole.length) {
-            // Full word typed, pause before deleting
+            // Word is fully typed, pause before deleting
             setTimeout(() => {
                 isDeleting = true;
-                type();
+                setTimeout(type, deletingSpeed); // Start deleting after pause
             }, pauseAfterTyping);
         } else {
             // Continue typing
             setTimeout(type, typingSpeed);
         }
-    } else if (isDeleting && j >= 0) {
+    } else {
         // Deleting backward
-        dynamicText.textContent = currentRole.substring(0, j);
+        dynamicText.textContent = currentRole.substring(0, j); // Show up to j characters while deleting
         j--;
 
         if (j < 0) {
@@ -67,5 +67,7 @@ function type() {
         }
     }
 }
+
+document.addEventListener('DOMContentLoaded', type);
 
 document.addEventListener('DOMContentLoaded', type);
