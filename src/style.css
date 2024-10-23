@@ -112,11 +112,11 @@ p {
     font-weight: 100;
 }
 
-.subtext {
+/* .subtext {
     font-size: 15px;
     font-weight: 300;
     margin: 10px;
-}
+} */
 
 /* .hero-area {
     background-color: #1c1d25;
@@ -298,24 +298,52 @@ p {
     color: #ec4e1a;
 }
 
-.project-card {
-    width: 300px;
-    height: 600px;
-    box-shadow: 5px 5px 20px rgb(145, 145, 145);
-    border-radius: 10px;
-    margin: 10px;
-}
-
 .project-container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
+}
+
+.project-card {
+    display: block; /* Allow the entire card to be clickable */
+    width: 250px;
+    margin: 20px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    color: inherit;
+    transform: scale(1); /* Initial size */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    opacity: 0;
+    animation: popUp 0.8s forwards; /* Animation for pop-up effect */
+}
+
+.project-card:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3); /* Shadow on hover */
+}
+
+@keyframes popUp {
+    0% {
+        opacity: 0;
+        transform: scale(0.8); /* Start smaller */
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1); /* End at normal size */
+    }
 }
 
 .project-image {
     width: 100%;
-    border-radius: 10px;
-    border-end-end-radius: 0px;
-    border-end-start-radius: 0px;
+    border-radius: 8px;
+}
+
+.subtext {
+    margin-top: 10px;
+    color: #333;
 }
 
 .nav-heading {
