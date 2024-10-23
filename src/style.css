@@ -112,11 +112,11 @@ p {
     font-weight: 100;
 }
 
-/* .subtext {
+.subtext {
     font-size: 15px;
     font-weight: 300;
     margin: 10px;
-} */
+}
 
 /* .hero-area {
     background-color: #1c1d25;
@@ -341,10 +341,10 @@ p {
     border-radius: 8px;
 }
 
-.subtext {
+/* .subtext {
     margin-top: 10px;
     color: #333;
-}
+} */
 
 .nav-heading {
     display: none;
