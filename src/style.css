@@ -49,6 +49,19 @@ footer {
     animation: fall linear infinite;
 }
 
+.blinking-underscore {
+    text-decoration: underline; /* Make it an actual underscore */
+    text-underline-offset: 0; /* Remove the offset */
+    text-underline-thickness: 2px; /* Adjust the thickness */
+    animation: blink-animation 1s infinite; /* Adjust the speed as needed */
+}
+
+@keyframes blink-animation {
+    0% { opacity: 0; } /* Start fully transparent */
+    50% { opacity: 1; } /* Become fully visible */
+    100% { opacity: 0; } /* End fully transparent */
+}
+
 @keyframes fall {
     0% {
         transform: translateY(-100px) rotate(0deg);
