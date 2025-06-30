@@ -36,35 +36,34 @@ const titles = [
     "Technical Architect"
   ];
 
-  const track = document.querySelector(".text-track");
+const track = document.querySelector(".text-track");
 
-  // Populate track
-  titles.forEach(title => {
-    const span = document.createElement("span");
-    span.textContent = title;
-    track.appendChild(span);
-  });
+// Fill the track with all titles
+titles.forEach(title => {
+const span = document.createElement("span");
+span.textContent = title;
+track.appendChild(span);
+});
 
-  let currentIndex = 0;
+let currentIndex = 0;
 
-  function spinLikeCrazyThenPause() {
-    let spins = 15 + Math.floor(Math.random() * 10); // Randomized spins for drama
-    let spinInterval = 100; // Fast spinning speed
+function spinSuperFastAndLand() {
+let spins = 25 + Math.floor(Math.random() * 10); // 25–35 spins
+let spinInterval = 50; // SUPER fast
+const spin = setInterval(() => {
+  currentIndex = (currentIndex + 1) % titles.length;
+  track.style.transition = "none"; // no animation, instant switch
+  track.style.transform = `translateY(-${currentIndex * 3}rem)`;
+  spins--;
 
-    const spin = setInterval(() => {
-      currentIndex = (currentIndex + 1) % titles.length;
-      track.style.transition = "transform 0.15s ease-in-out";
-      track.style.transform = `translateY(-${currentIndex * 3}rem)`;
-      spins--;
-
-      if (spins <= 0) {
-        clearInterval(spin);
-        setTimeout(spinLikeCrazyThenPause, 3500); // Hold on current title for ~3.5 seconds
-      }
-    }, spinInterval);
+  if (spins <= 0) {
+    clearInterval(spin);
+    setTimeout(spinSuperFastAndLand, 3500); // pause 3.5 seconds before next spin
   }
+}, spinInterval);
+}
 
-  spinLikeCrazyThenPause();
+spinSuperFastAndLand();
 
 let i = 0; // Current role index
 let j = 0; // Current character index in the role
