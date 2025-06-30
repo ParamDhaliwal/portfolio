@@ -28,13 +28,41 @@ const titles = [
     "Software Engineer",
     "Salesforce Developer",
     "Technical Consultant",
-    "MuleSoft Developer",
-  ];
+    "MuleSoft Developer"
+];
 
-const roleTextContainer = document.querySelector(".role-text");
+const track = document.querySelector(".text-track");
 
-// Populate all titles inside span elements
-roleTextContainer.innerHTML = titles.map(title => `<span>${title}</span>`).join("");
+// Populate the track with title spans
+titles.forEach(title => {
+const span = document.createElement("span");
+span.textContent = title;
+track.appendChild(span);
+});
+
+// Clone the first item and append for seamless looping
+const clone = track.firstElementChild.cloneNode(true);
+track.appendChild(clone);
+
+let index = 0;
+const intervalTime = 2000; // 2 seconds
+
+setInterval(() => {
+index++;
+track.style.transform = `translateY(-${index * 2.5}rem)`;
+
+// Reset after last item (with smooth loop)
+if (index === titles.length) {
+  setTimeout(() => {
+    track.style.transition = "none";
+    track.style.transform = `translateY(0)`;
+    index = 0;
+    // Force reflow then re-enable transition
+    void track.offsetWidth;
+    track.style.transition = "transform 0.6s ease-in-out";
+  }, 600); // Must match transition duration
+}
+}, intervalTime);
 
 let i = 0; // Current role index
 let j = 0; // Current character index in the role
