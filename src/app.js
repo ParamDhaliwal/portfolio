@@ -24,6 +24,18 @@ const roles = [
     'Technical Consultant'
 ];
 
+const titles = [
+    "Software Engineer",
+    "Salesforce Developer",
+    "Technical Consultant",
+    "MuleSoft Developer",
+  ];
+
+const roleTextContainer = document.querySelector(".role-text");
+
+// Populate all titles inside span elements
+roleTextContainer.innerHTML = titles.map(title => `<span>${title}</span>`).join("");
+
 let i = 0; // Current role index
 let j = 0; // Current character index in the role
 let isDeleting = false;
