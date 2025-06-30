@@ -17,48 +17,54 @@ function closeMenu() {
 }
 
 // New typing animation functionality
-const roles = [
-    'Salesforce Developer',
-    'Front-End Developer',
-    'Back-End Developer',
-    'Technical Consultant'
-];
-
 const titles = [
     "Software Engineer",
     "Salesforce Developer",
     "Technical Consultant",
-    "MuleSoft Developer"
+    "MuleSoft Developer",
+    "Full Stack Developer",
+    "Cloud Integration Specialist",
+    "API Engineer",
+    "DevOps Consultant",
+    "CRM Strategist",
+    "Backend Engineer",
+    "Solution Engineer",
+    "Integration Developer",
+    "Data Migration Expert",
+    "CI/CD Engineer",
+    "JavaScript Developer",
+    "Technical Architect"
   ];
 
   const track = document.querySelector(".text-track");
 
+  // Populate track
   titles.forEach(title => {
     const span = document.createElement("span");
     span.textContent = title;
     track.appendChild(span);
   });
 
-  const clone = track.firstElementChild.cloneNode(true);
-  track.appendChild(clone);
+  let currentIndex = 0;
 
-  let index = 0;
-  const intervalTime = 4000; // 4 seconds
+  function spinLikeCrazyThenPause() {
+    let spins = 15 + Math.floor(Math.random() * 10); // Randomized spins for drama
+    let spinInterval = 100; // Fast spinning speed
 
-  setInterval(() => {
-    index++;
-    track.style.transform = `translateY(-${index * 3}rem)`; // Adjusted for new height
+    const spin = setInterval(() => {
+      currentIndex = (currentIndex + 1) % titles.length;
+      track.style.transition = "transform 0.15s ease-in-out";
+      track.style.transform = `translateY(-${currentIndex * 3}rem)`;
+      spins--;
 
-    if (index === titles.length) {
-      setTimeout(() => {
-        track.style.transition = "none";
-        track.style.transform = `translateY(0)`;
-        index = 0;
-        void track.offsetWidth;
-        track.style.transition = "transform 0.3s ease-in-out";
-      }, 300);
-    }
-  }, intervalTime);
+      if (spins <= 0) {
+        clearInterval(spin);
+        setTimeout(spinLikeCrazyThenPause, 3500); // Hold on current title for ~3.5 seconds
+      }
+    }, spinInterval);
+  }
+
+  spinLikeCrazyThenPause();
 
 let i = 0; // Current role index
 let j = 0; // Current character index in the role
