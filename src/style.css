@@ -74,54 +74,43 @@ footer {
 }
 
 .role-container {
-font-size: 1.8rem;
-font-weight: bold;
-display: flex;
-align-items: center;
-height: 2.5rem;
-overflow: hidden;
+    font-size: 2rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    height: 2.5rem;
+    overflow: hidden;
 }
 
 .blinking-cursor {
-color: #00ffcc;
-font-size: 2rem;
-margin-right: 0.5rem;
-animation: blink 1s steps(2, start) infinite;
+    color: #00ffcc;
+    font-size: 2rem;
+    margin-right: 0.5rem;
+    animation: blink 1s steps(2, start) infinite;
 }
 
 @keyframes blink {
-to {
-opacity: 0;
-}
+    to {
+      opacity: 0;
+    }
 }
 
 .role-text {
-display: inline-block;
-animation: spin 4s infinite;
-will-change: transform;
+    overflow: hidden;
+    height: 2.5rem;
+    position: relative;
 }
 
-@keyframes spin {
-0% {
-transform: translateY(0%);
-}
-25% {
-transform: translateY(-100%);
-}
-50% {
-transform: translateY(-200%);
-}
-75% {
-transform: translateY(-300%);
-}
-100% {
-transform: translateY(0%);
-}
+.text-track {
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.6s ease-in-out;
 }
 
-.role-text span {
-display: block;
-height: 2.5rem;
+.text-track span {
+    height: 2.5rem;
+    display: block;
+    font-size: 1.9rem;
 }
 
 .skills-tools {
