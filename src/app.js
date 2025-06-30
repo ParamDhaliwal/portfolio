@@ -29,40 +29,36 @@ const titles = [
     "Salesforce Developer",
     "Technical Consultant",
     "MuleSoft Developer"
-];
+  ];
 
-const track = document.querySelector(".text-track");
+  const track = document.querySelector(".text-track");
 
-// Populate the track with title spans
-titles.forEach(title => {
-const span = document.createElement("span");
-span.textContent = title;
-track.appendChild(span);
-});
+  titles.forEach(title => {
+    const span = document.createElement("span");
+    span.textContent = title;
+    track.appendChild(span);
+  });
 
-// Clone the first item and append for seamless looping
-const clone = track.firstElementChild.cloneNode(true);
-track.appendChild(clone);
+  const clone = track.firstElementChild.cloneNode(true);
+  track.appendChild(clone);
 
-let index = 0;
-const intervalTime = 2000; // 2 seconds
+  let index = 0;
+  const intervalTime = 4000; // 4 seconds
 
-setInterval(() => {
-index++;
-track.style.transform = `translateY(-${index * 2.5}rem)`;
+  setInterval(() => {
+    index++;
+    track.style.transform = `translateY(-${index * 3}rem)`; // Adjusted for new height
 
-// Reset after last item (with smooth loop)
-if (index === titles.length) {
-  setTimeout(() => {
-    track.style.transition = "none";
-    track.style.transform = `translateY(0)`;
-    index = 0;
-    // Force reflow then re-enable transition
-    void track.offsetWidth;
-    track.style.transition = "transform 0.6s ease-in-out";
-  }, 600); // Must match transition duration
-}
-}, intervalTime);
+    if (index === titles.length) {
+      setTimeout(() => {
+        track.style.transition = "none";
+        track.style.transform = `translateY(0)`;
+        index = 0;
+        void track.offsetWidth;
+        track.style.transition = "transform 0.3s ease-in-out";
+      }, 300);
+    }
+  }, intervalTime);
 
 let i = 0; // Current role index
 let j = 0; // Current character index in the role
