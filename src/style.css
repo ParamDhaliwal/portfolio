@@ -73,6 +73,57 @@ footer {
     }
 }
 
+.role-container {
+font-size: 1.8rem;
+font-weight: bold;
+display: flex;
+align-items: center;
+height: 2.5rem;
+overflow: hidden;
+}
+
+.blinking-cursor {
+color: #00ffcc;
+font-size: 2rem;
+margin-right: 0.5rem;
+animation: blink 1s steps(2, start) infinite;
+}
+
+@keyframes blink {
+to {
+opacity: 0;
+}
+}
+
+.role-text {
+display: inline-block;
+animation: spin 4s infinite;
+will-change: transform;
+}
+
+@keyframes spin {
+0% {
+transform: translateY(0%);
+}
+25% {
+transform: translateY(-100%);
+}
+50% {
+transform: translateY(-200%);
+}
+75% {
+transform: translateY(-300%);
+}
+100% {
+transform: translateY(0%);
+}
+}
+
+.role-text span {
+display: block;
+height: 2.5rem;
+}
+
 .skills-tools {
     max-width: 1200px;
     margin-left: 0;
