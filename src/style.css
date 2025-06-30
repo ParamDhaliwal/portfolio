@@ -73,17 +73,17 @@ footer {
     }
 }
 
-.role-container {
+  .role-container {
     font-size: 2rem;
     font-weight: normal;
     display: flex;
     align-items: center;
-    height: 3rem; /* Adjusted height */
+    height: 3rem;
     overflow: hidden;
   }
 
   .blinking-cursor {
-    color: #ffffff;
+    color: #00ffcc;
     font-size: 2rem;
     margin-right: 0.5rem;
     animation: blink 1s steps(2, start) infinite;
@@ -97,22 +97,24 @@ footer {
 
   .role-text {
     overflow: hidden;
-    height: 3rem; /* Matches container height */
+    height: 3rem;
     position: relative;
+    width: 100%;
   }
 
   .text-track {
     display: flex;
     flex-direction: column;
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.15s ease-in-out;
   }
 
   .text-track span {
-    height: 3rem; /* Increased spacing between titles */
+    height: 3rem;
+    line-height: 3rem;
     display: block;
     font-size: 1.9rem;
     font-weight: normal;
-    line-height: 3rem;
+    white-space: nowrap;
   }
 
 .skills-tools {
