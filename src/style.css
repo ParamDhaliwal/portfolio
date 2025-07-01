@@ -73,7 +73,7 @@ footer {
     }
 }
 
-.role-container {
+  .role-container {
     font-size: 2rem;
     font-weight: normal;
     display: flex;
@@ -83,7 +83,7 @@ footer {
   }
 
   .blinking-cursor {
-    color: #00ffcc;
+    color: #ffffff;
     font-size: 2rem;
     margin-right: 0.5rem;
     animation: blink 1s steps(2, start) infinite;
@@ -105,7 +105,7 @@ footer {
   .text-track {
     display: flex;
     flex-direction: column;
-    transition: transform 0.05s ease-in-out; /* fast scroll look */
+    transition: transform 0.01s ease-in-out; /* 🔥 FASTEST */
     will-change: transform;
   }
 
