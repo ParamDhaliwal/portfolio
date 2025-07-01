@@ -38,7 +38,8 @@ const titles = [
 
 const track = document.querySelector(".text-track");
 
-  const allTitles = [...titles, ...titles, ...titles]; // extended for illusion
+  // Add titles multiple times for spinning effect
+  const allTitles = [...titles, ...titles, ...titles];
   allTitles.forEach(title => {
     const span = document.createElement("span");
     span.textContent = title;
@@ -47,11 +48,12 @@ const track = document.querySelector(".text-track");
 
   let currentIndex = 0;
 
-  function spinUltraFastAndLand() {
-    let spinSteps = 40 + Math.floor(Math.random() * 15); // extra spins
-    let delay = 10; // ⚡️ super fast
+  function spinWithBlur() {
+    let spinSteps = 35 + Math.floor(Math.random() * 10); // More steps = faster blur
+    let delay = 50;
 
-    track.style.transition = `transform ${delay}ms ease-in-out`;
+    track.classList.add("blurry"); // Add blur before spinning
+    track.style.transition = `transform ${delay}ms linear`;
 
     const spinInterval = setInterval(() => {
       currentIndex++;
@@ -62,20 +64,24 @@ const track = document.querySelector(".text-track");
         clearInterval(spinInterval);
 
         setTimeout(() => {
-          track.style.transition = 'none';
+          // Clean landing
+          track.classList.remove("blurry");
+
+          // Reset to real index to avoid buildup
           currentIndex = currentIndex % titles.length;
+          track.style.transition = "none";
           track.style.transform = `translateY(-${currentIndex * 3}rem)`;
 
-          void track.offsetWidth;
-          track.style.transition = `transform ${delay}ms ease-in-out`;
+          void track.offsetWidth; // force reflow
+          track.style.transition = `transform ${delay}ms linear`;
 
-          setTimeout(spinUltraFastAndLand, 3500); // wait before spinning again
-        }, 3500);
+          setTimeout(spinWithBlur, 3500); // Pause before next spin
+        }, 100); // Short pause to remove blur before holding
       }
     }, delay);
   }
 
-  spinUltraFastAndLand();
+  spinWithBlur();
 
 let i = 0; // Current role index
 let j = 0; // Current character index in the role
