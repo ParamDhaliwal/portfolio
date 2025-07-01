@@ -38,9 +38,7 @@ const titles = [
 
 const track = document.querySelector(".text-track");
 
-  // Load titles + extra copies for spinning illusion
-  const allTitles = [...titles, ...titles, ...titles]; // 3x for blur effect
-
+  const allTitles = [...titles, ...titles, ...titles]; // extended for illusion
   allTitles.forEach(title => {
     const span = document.createElement("span");
     span.textContent = title;
@@ -49,9 +47,9 @@ const track = document.querySelector(".text-track");
 
   let currentIndex = 0;
 
-  function spinFastAndLand() {
-    let spinSteps = 30 + Math.floor(Math.random() * 10); // 30–40 spins
-    let delay = 50;
+  function spinUltraFastAndLand() {
+    let spinSteps = 40 + Math.floor(Math.random() * 15); // extra spins
+    let delay = 10; // ⚡️ super fast
 
     track.style.transition = `transform ${delay}ms ease-in-out`;
 
@@ -63,24 +61,21 @@ const track = document.querySelector(".text-track");
       if (spinSteps <= 0) {
         clearInterval(spinInterval);
 
-        // Pause on the final title
         setTimeout(() => {
-          // Reset to start at the original index for looping
           track.style.transition = 'none';
           currentIndex = currentIndex % titles.length;
           track.style.transform = `translateY(-${currentIndex * 3}rem)`;
 
-          // Force reflow and restore transition
           void track.offsetWidth;
           track.style.transition = `transform ${delay}ms ease-in-out`;
 
-          setTimeout(spinFastAndLand, 3500); // Wait then spin again
+          setTimeout(spinUltraFastAndLand, 3500); // wait before spinning again
         }, 3500);
       }
     }, delay);
   }
 
-  spinFastAndLand();
+  spinUltraFastAndLand();
 
 let i = 0; // Current role index
 let j = 0; // Current character index in the role
