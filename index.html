@@ -3,24 +3,28 @@
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <script>
         window.onload = function () {
-            const duration = 4 * 1000;
-            const end = Date.now() + duration;
-            
-            (function frame() {
-                confetti({
-                    particleCount: 2,
-                    angle: 90,
-                    spread: 360,
-                    origin: { x: Math.random(), y: 0 },
-                    gravity: 1,
-                    ticks: 300,
-                    zIndex: 9999
-                });
-            
-                if (Date.now() < end) {
-                    requestAnimationFrame(frame);
-                }
-            })();
+          const duration = 3 * 1000;
+          const end = Date.now() + duration;
+    
+          const colors = ['#ff69b4', '#ffeb3b', '#4fc3f7', '#81c784', '#ba68c8']; // pink, yellow, blue, green, purple
+    
+          (function frame() {
+            confetti({
+              particleCount: 4,
+              angle: 90,
+              spread: 360,
+              origin: { x: Math.random(), y: 0 },
+              gravity: 1,
+              ticks: 300,
+              zIndex: 9999,
+              colors: colors,
+              scalar: 1.4, // size multiplier
+            });
+    
+            if (Date.now() < end) {
+              requestAnimationFrame(frame);
+            }
+          })();
         };
     </script>
     <head>
