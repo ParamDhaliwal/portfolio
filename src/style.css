@@ -113,6 +113,39 @@ footer {
     filter: blur(1px);
   }
 
+#graffiti-drop {
+    position: fixed;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%) scale(1);
+    font-size: 4rem;
+    font-family: 'Impact', 'Arial Black', sans-serif;
+    color: #fff;
+    text-shadow: 2px 2px 0 #00ffcc, -2px -2px 0 #00ccff;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 9999;
+    animation: dropGraffiti 1.4s ease-out forwards;
+  }
+
+  @keyframes dropGraffiti {
+    0% {
+      top: -150px;
+      opacity: 0;
+      transform: translateX(-50%) scale(0.6) rotate(-10deg);
+    }
+    60% {
+      top: 60px;
+      opacity: 1;
+      transform: translateX(-50%) scale(1.2) rotate(2deg);
+    }
+    100% {
+      top: 100px;
+      opacity: 1;
+      transform: translateX(-50%) scale(1) rotate(0deg);
+    }
+  }
+
   .text-track span {
     height: 3rem;
     line-height: 3rem;
