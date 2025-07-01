@@ -105,7 +105,8 @@ footer {
   .text-track {
     display: flex;
     flex-direction: column;
-    transition: none;
+    transition: transform 0.05s ease-in-out; /* fast scroll look */
+    will-change: transform;
   }
 
   .text-track span {
