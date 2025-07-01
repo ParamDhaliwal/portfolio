@@ -38,32 +38,49 @@ const titles = [
 
 const track = document.querySelector(".text-track");
 
-// Fill the track with all titles
-titles.forEach(title => {
-const span = document.createElement("span");
-span.textContent = title;
-track.appendChild(span);
-});
+  // Load titles + extra copies for spinning illusion
+  const allTitles = [...titles, ...titles, ...titles]; // 3x for blur effect
 
-let currentIndex = 0;
+  allTitles.forEach(title => {
+    const span = document.createElement("span");
+    span.textContent = title;
+    track.appendChild(span);
+  });
 
-function spinSuperFastAndLand() {
-let spins = 25 + Math.floor(Math.random() * 10); // 25–35 spins
-let spinInterval = 50; // SUPER fast
-const spin = setInterval(() => {
-  currentIndex = (currentIndex + 1) % titles.length;
-  track.style.transition = "none"; // no animation, instant switch
-  track.style.transform = `translateY(-${currentIndex * 3}rem)`;
-  spins--;
+  let currentIndex = 0;
 
-  if (spins <= 0) {
-    clearInterval(spin);
-    setTimeout(spinSuperFastAndLand, 3500); // pause 3.5 seconds before next spin
+  function spinFastAndLand() {
+    let spinSteps = 30 + Math.floor(Math.random() * 10); // 30–40 spins
+    let delay = 50;
+
+    track.style.transition = `transform ${delay}ms ease-in-out`;
+
+    const spinInterval = setInterval(() => {
+      currentIndex++;
+      track.style.transform = `translateY(-${currentIndex * 3}rem)`;
+      spinSteps--;
+
+      if (spinSteps <= 0) {
+        clearInterval(spinInterval);
+
+        // Pause on the final title
+        setTimeout(() => {
+          // Reset to start at the original index for looping
+          track.style.transition = 'none';
+          currentIndex = currentIndex % titles.length;
+          track.style.transform = `translateY(-${currentIndex * 3}rem)`;
+
+          // Force reflow and restore transition
+          void track.offsetWidth;
+          track.style.transition = `transform ${delay}ms ease-in-out`;
+
+          setTimeout(spinFastAndLand, 3500); // Wait then spin again
+        }, 3500);
+      }
+    }, delay);
   }
-}, spinInterval);
-}
 
-spinSuperFastAndLand();
+  spinFastAndLand();
 
 let i = 0; // Current role index
 let j = 0; // Current character index in the role
