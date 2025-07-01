@@ -73,7 +73,7 @@ footer {
     }
 }
 
-  .role-container {
+ .role-container {
     font-size: 2rem;
     font-weight: normal;
     display: flex;
@@ -105,8 +105,12 @@ footer {
   .text-track {
     display: flex;
     flex-direction: column;
-    transition: transform 0.01s ease-in-out; /* 🔥 FASTEST */
+    transition: transform 0.05s linear;
     will-change: transform;
+  }
+
+  .text-track.blurry {
+    filter: blur(2px);
   }
 
   .text-track span {
