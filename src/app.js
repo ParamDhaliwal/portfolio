@@ -83,6 +83,17 @@ const track = document.querySelector(".text-track");
 
   spinWithBlur();
 
+  function toggleMoreAboutMe() {
+    const moreText = document.getElementById("more-about-me");
+    const toggle = document.querySelector(".expand-toggle");
+
+    const isCollapsed = moreText.classList.contains("collapsed");
+    moreText.classList.toggle("collapsed", !isCollapsed);
+    moreText.classList.toggle("expanded", isCollapsed);
+
+    toggle.textContent = isCollapsed ? "[−]" : "[+]";
+  }
+
 let i = 0; // Current role index
 let j = 0; // Current character index in the role
 let isDeleting = false;
