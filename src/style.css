@@ -49,6 +49,22 @@ footer {
     animation: fall linear infinite;
 }
 
+.collapsed {
+  display: none;
+}
+
+.expanded {
+  display: inline;
+}
+
+.expand-toggle {
+  color: #007bff;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 0 4px;
+  user-select: none;
+}
+
 .blinking-underscore {
     text-decoration: underline; /* Make it an actual underscore */
     text-underline-offset: 0; /* Remove the offset */
