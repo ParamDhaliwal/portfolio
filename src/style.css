@@ -4,7 +4,7 @@
 }
 
 .header {
-    position: relative; 
+    position: sticky; 
     top: 0;
     background-color: #1c1d25;
     z-index: 9999;
