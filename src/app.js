@@ -138,31 +138,26 @@ function type() {
     }
 }
 
-<script>
-  const certTrack = document.getElementById("cert-track");
-  const certLeft = document.getElementById("cert-left");
-  const certRight = document.getElementById("cert-right");
-  let certScrollPosition = 0;
-  const scrollAmount = 280;
+const carousel = document.getElementById('certCarousel');
+const leftArrow = document.querySelector('.left-arrow');
+const rightArrow = document.querySelector('.right-arrow');
 
-  certRight.addEventListener("click", () => {
-    certScrollPosition += scrollAmount;
-    certTrack.scrollTo({ left: certScrollPosition, behavior: "smooth" });
-    certLeft.style.display = "block";
-    if (certScrollPosition >= certTrack.scrollWidth - certTrack.clientWidth) {
-      certRight.style.display = "none";
-    }
-  });
+function scrollCerts(direction) {
+    const cardWidth = carousel.querySelector('.cert-card').offsetWidth + 20; // card width + gap
+    carousel.scrollBy({ left: direction * cardWidth, behavior: 'smooth' });
+    
+    // Optional: hide/show arrows based on scroll position
+    setTimeout(() => {
+            leftArrow.classList.toggle('hidden', carousel.scrollLeft <= 0);
+            rightArrow.classList.toggle('hidden', carousel.scrollLeft + carousel.offsetWidth >= carousel.scrollWidth);
+        }, 300);
+}
 
-  certLeft.addEventListener("click", () => {
-    certScrollPosition -= scrollAmount;
-    certTrack.scrollTo({ left: certScrollPosition, behavior: "smooth" });
-    certRight.style.display = "block";
-    if (certScrollPosition <= 0) {
-      certLeft.style.display = "none";
-    }
-  });
-</script>
+// Initial arrow check on page load
+window.addEventListener('load', () => {
+    leftArrow.classList.add('hidden');
+    rightArrow.classList.toggle('hidden', carousel.scrollWidth <= carousel.offsetWidth);
+});
 
 document.addEventListener('DOMContentLoaded', type);
 
