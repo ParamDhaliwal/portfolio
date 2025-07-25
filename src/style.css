@@ -578,6 +578,10 @@ li {
     color: #ec4e1a;
 }
 
+.nav-item {
+    margin-left: 4em;
+}
+
 @media only screen and (max-width: 1000px) {
     .project-container {
         display: flex;
