@@ -80,21 +80,19 @@ footer {
   display: flex;
   overflow-x: auto;
   scroll-behavior: smooth;
-  gap: 20px;
-  padding: 10px;
-  scroll-snap-type: x mandatory;
+  padding: 20px 0;
+  gap: 20px; /* Adds space between the cert cards */
 }
 
 .cert-card {
   flex: 0 0 auto;
-  width: 250px;
-  background-color: #f9f9f9;
-  border-radius: 10px;
-  scroll-snap-align: start;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  text-align: center;
+  width: 200px;
+  background-color: #ffffff;
   padding: 15px;
-  transition: transform 0.3s;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
 }
 
 .cert-card:hover {
