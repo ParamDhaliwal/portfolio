@@ -68,68 +68,27 @@ footer {
 }
 
 /* Certification Carousel Styles */
-.cert-carousel-wrapper {
-  position: relative;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-  margin-top: 20px;
-}
-
-.cert-carousel {
+.cert-container {
   display: flex;
   overflow-x: auto;
-  scroll-behavior: smooth;
+  gap: 20px;
   padding: 20px 0;
-  gap: 20px; /* Adds space between the cert cards */
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
 }
 
-.cert-card {
-  flex: 0 0 auto;
-  width: 200px;
-  background-color: #ffffff;
-  padding: 15px;
+.cert-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.cert-container::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
   border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  transition: transform 0.3s ease-in-out;
 }
 
-.cert-card:hover {
-  transform: scale(1.05);
-}
-
-.cert-card img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 6px;
-  margin-bottom: 10px;
-}
-
-.carousel-arrow {
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  border: none;
-  padding: 12px;
-  cursor: pointer;
-  position: absolute;
-  z-index: 2;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 24px;
-  border-radius: 50%;
-}
-
-.left-arrow {
-  left: 10px;
-}
-
-.right-arrow {
-  right: 10px;
-}
-
-.carousel-arrow.hidden {
-  display: none;
+.cert-container .project-card {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
 }
 
 .blinking-underscore {
