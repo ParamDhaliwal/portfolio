@@ -138,26 +138,16 @@ function type() {
     }
 }
 
-const carousel = document.getElementById('certCarousel');
-const leftArrow = document.querySelector('.left-arrow');
-const rightArrow = document.querySelector('.right-arrow');
-
 function scrollCerts(direction) {
-    const cardWidth = carousel.querySelector('.cert-card').offsetWidth + 20; // card width + gap
-    carousel.scrollBy({ left: direction * cardWidth, behavior: 'smooth' });
-    
-    // Optional: hide/show arrows based on scroll position
-    setTimeout(() => {
-            leftArrow.classList.toggle('hidden', carousel.scrollLeft <= 0);
-            rightArrow.classList.toggle('hidden', carousel.scrollLeft + carousel.offsetWidth >= carousel.scrollWidth);
-        }, 300);
-}
+  const container = document.querySelector('.cert-container');
+  const scrollAmount = 300;
 
-// Initial arrow check on page load
-window.addEventListener('load', () => {
-    leftArrow.classList.add('hidden');
-    rightArrow.classList.toggle('hidden', carousel.scrollWidth <= carousel.offsetWidth);
-});
+  if (direction === 'left') {
+    container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+  } else {
+    container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+  }
+}
 
 document.addEventListener('DOMContentLoaded', type);
 
