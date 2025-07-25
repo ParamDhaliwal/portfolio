@@ -562,15 +562,36 @@ li {
     position: sticky; top: 0;
 }
 
-.nav-menu {
+/* .nav-menu {
     display: flex;
     align-items: center;
     background-color: inherit;
+} */
+
+.nav-menu {
+    display: flex;
+    gap: 30px; /* Controls space between items */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    align-items: center;
 }
 
-.nav-link{
+.nav-item {
+    /* Optional spacing if needed */
+    padding: 0 5px;
+}
+
+/* .nav-link{
     font-size: 1.6rem;
     font-weight: 400;
+} */
+
+.nav-link {
+    text-decoration: none;
+    color: inherit;
+    font-weight: 500;
+    transition: color 0.2s ease;
 }
 
 .nav-link:hover{
