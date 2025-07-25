@@ -138,18 +138,31 @@ function type() {
     }
 }
 
-function scrollCerts(direction) {
-  const container = document.getElementById('certCarousel');
-  const scrollAmount = 300;
-  container.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+<script>
+  const certTrack = document.getElementById("cert-track");
+  const certLeft = document.getElementById("cert-left");
+  const certRight = document.getElementById("cert-right");
+  let certScrollPosition = 0;
+  const scrollAmount = 280;
 
-  // Delay checking arrows visibility to wait for scroll to finish
-  setTimeout(() => {
-    const maxScroll = container.scrollWidth - container.clientWidth;
-    document.querySelector('.left-arrow').classList.toggle('hidden', container.scrollLeft <= 0);
-    document.querySelector('.right-arrow').classList.toggle('hidden', container.scrollLeft >= maxScroll - 5);
-  }, 400);
-}
+  certRight.addEventListener("click", () => {
+    certScrollPosition += scrollAmount;
+    certTrack.scrollTo({ left: certScrollPosition, behavior: "smooth" });
+    certLeft.style.display = "block";
+    if (certScrollPosition >= certTrack.scrollWidth - certTrack.clientWidth) {
+      certRight.style.display = "none";
+    }
+  });
+
+  certLeft.addEventListener("click", () => {
+    certScrollPosition -= scrollAmount;
+    certTrack.scrollTo({ left: certScrollPosition, behavior: "smooth" });
+    certRight.style.display = "block";
+    if (certScrollPosition <= 0) {
+      certLeft.style.display = "none";
+    }
+  });
+</script>
 
 document.addEventListener('DOMContentLoaded', type);
 
