@@ -138,6 +138,19 @@ function type() {
     }
 }
 
+function scrollCerts(direction) {
+  const container = document.getElementById('certCarousel');
+  const scrollAmount = 300;
+  container.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+
+  // Delay checking arrows visibility to wait for scroll to finish
+  setTimeout(() => {
+    const maxScroll = container.scrollWidth - container.clientWidth;
+    document.querySelector('.left-arrow').classList.toggle('hidden', container.scrollLeft <= 0);
+    document.querySelector('.right-arrow').classList.toggle('hidden', container.scrollLeft >= maxScroll - 5);
+  }, 400);
+}
+
 document.addEventListener('DOMContentLoaded', type);
 
 document.addEventListener('DOMContentLoaded', type);
