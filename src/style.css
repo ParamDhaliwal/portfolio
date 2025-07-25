@@ -8,6 +8,9 @@
     top: 0;
     background-color: #1c1d25;
     z-index: 9999;
+    width: 100%;
+    padding: 10px 20px;
+    box-sizing: border-box;
 }
 
 body {
