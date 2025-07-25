@@ -70,8 +70,6 @@ footer {
 /* Certification Carousel Styles */
 .cert-container {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
   overflow-x: auto;
   gap: 100px;
   padding: 20px 0;
