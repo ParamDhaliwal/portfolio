@@ -551,7 +551,6 @@ li {
     justify-content: space-between;
     align-items: center;
     background-color: inherit;
-    flex-wrap: wrap; /* Prevents overflow */
     width: 100%;
 }
 
@@ -567,7 +566,7 @@ li {
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
     background-color: white;
-    position: sticky; top: 0;
+    top: 0;
 }
 
 /* .nav-menu {
