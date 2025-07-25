@@ -67,6 +67,65 @@ footer {
   user-select: none;
 }
 
+.cert-carousel-wrapper {
+  position: relative;
+  overflow: hidden;
+  padding: 20px 0;
+}
+
+.cert-carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 20px;
+}
+
+.cert-card {
+  min-width: 220px;
+  flex-shrink: 0;
+  background-color: #1e1e1e;
+  padding: 16px;
+  border-radius: 10px;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.cert-card img {
+  max-width: 100px;
+  margin-bottom: 10px;
+}
+
+.cert-card:hover {
+  transform: scale(1.05);
+}
+
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #333;
+  color: white;
+  font-size: 24px;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  z-index: 2;
+  opacity: 0.8;
+  border-radius: 50%;
+}
+
+.left-arrow {
+  left: 10px;
+}
+
+.right-arrow {
+  right: 10px;
+}
+
+.hidden {
+  display: none;
+}
+
 .blinking-underscore {
     text-decoration: underline; /* Make it an actual underscore */
     text-underline-offset: 0; /* Remove the offset */
