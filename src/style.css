@@ -582,7 +582,8 @@ li {
 
 .nav-menu {
     display: flex;
-    gap: 30px; /* Controls space between items */
+    flex-wrap: wrap; /* Wraps to next line if needed */
+    gap: 20px; /* Controls space between items */
     list-style: none;
     padding: 0;
     margin: 0;
@@ -602,7 +603,7 @@ li {
 .nav-link {
     text-decoration: none;
     color: inherit;
-    font-size: 1.6rem;
+    font-size: 1rem;
     font-weight: 400;
     transition: color 0.2s ease;
 }
