@@ -602,7 +602,8 @@ li {
 .nav-link {
     text-decoration: none;
     color: inherit;
-    font-weight: 500;
+    font-size: 1.6rem;
+    font-weight: 400;
     transition: color 0.2s ease;
 }
 
@@ -671,8 +672,7 @@ a {
     }
 
     .logo {
-        max-width: 50px;
-        height: auto;
+        display: none;
     }
 
     .nav-logo {
