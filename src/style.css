@@ -384,9 +384,14 @@ p {
 	transition:all ease 0.5s;
 } */
 
-.logo {
+/* .logo {
     height: 80px;
     margin: 25px;
+} */
+
+.logo {
+    max-width: 50px;
+    height: auto;
 }
 
 .logo1 {
