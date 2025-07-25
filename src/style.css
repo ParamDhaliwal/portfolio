@@ -71,6 +71,7 @@ footer {
 .cert-container {
   display: flex;
   overflow-x: auto;
+  justify-content: space-around;
   gap: 200px;
   padding: 20px 0;
   scroll-snap-type: x mandatory;
