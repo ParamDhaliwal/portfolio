@@ -563,6 +563,8 @@ li {
 
 .hamburger {
     display: none;
+    flex-direction: column;
+    cursor: pointer;
 }
 
 .bar {
@@ -664,7 +666,7 @@ a {
     }
 
     .hamburger {
-        display: block;
+        display: flex;
         border: 0;
         background-color: transparent;
         color: white;
@@ -672,7 +674,13 @@ a {
         margin: 20px;
         align-self: flex-end;
         cursor: pointer;
+        align-self: flex-start; /* Prevents vertical stretching */
     }
+
+/*     .hamburger {
+        display: flex; /* Now it's visible */
+        align-self: flex-start; /* Prevents vertical stretching */
+    } */
 
     .logo {
         display: none;
