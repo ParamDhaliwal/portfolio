@@ -584,8 +584,7 @@ li {
 
 .nav-menu {
     display: flex;
-    flex-wrap: wrap; /* Wraps to next line if needed */
-    gap: 20px; /* Controls space between items */
+    gap: 10px; /* Controls space between items */
     list-style: none;
     padding: 0;
     margin: 0;
