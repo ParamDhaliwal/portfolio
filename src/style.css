@@ -101,6 +101,20 @@ footer {
   border-radius: 6px;
 }
 
+.info-icon {
+  width: 16px;
+  height: 16px;
+  margin-left: 6px;
+  vertical-align: middle;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+  cursor: help;
+}
+
+.info-icon:hover {
+  opacity: 1;
+}
+
 .blinking-underscore {
     text-decoration: underline; /* Make it an actual underscore */
     text-underline-offset: 0; /* Remove the offset */
