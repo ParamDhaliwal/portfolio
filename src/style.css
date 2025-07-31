@@ -74,27 +74,31 @@ footer {
 }
 
 /* Certification Carousel Styles */
-.cert-container {
-  display: flex;
-  overflow-x: auto;
-  gap: 140px;
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
   padding: 20px 0;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
 }
 
-.cert-container::-webkit-scrollbar {
-  height: 8px;
-}
-
-.cert-container::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 0, 0, 0.2);
+.cert-card {
+  background-color: #1a1a1a; /* Match your theme */
   border-radius: 10px;
+  padding: 16px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
 }
 
-.cert-container .project-card {
-  flex: 0 0 auto;
-  scroll-snap-align: start;
+.cert-card:hover {
+  transform: translateY(-5px);
+}
+
+.cert-card img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+  border-radius: 6px;
 }
 
 .blinking-underscore {
