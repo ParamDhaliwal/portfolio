@@ -108,7 +108,7 @@ footer {
   vertical-align: middle;
   opacity: 0.7;
   transition: opacity 0.2s ease;
-  cursor: help;
+  cursor: pointer; /* <- Change this from 'help' */
 }
 
 .info-icon:hover {
