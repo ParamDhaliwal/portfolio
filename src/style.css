@@ -35,14 +35,14 @@ section {
   background: linear-gradient(
     to bottom,
     white 0%,
-    #1c1d25 15%,
-    #1c1d25 85%,
+    #1c1d25 30%,
+    #1c1d25 70%,
     white 100%
   );
   color: white;
   text-align: center;
-  padding-bottom: 60px;
-  padding-top: 60px;
+  padding-bottom: 100px;
+  padding-top: 100px;
 }
 
 footer {
@@ -751,6 +751,7 @@ a {
         transform: translateY(-8px) rotate(-45deg);
     }
 }
+
 
 
 
