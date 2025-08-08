@@ -32,11 +32,17 @@ section {
 }
 
 #projects.sub-section-alternative {
-    background-color: #1c1d25;
-    color: white;
-    text-align: center;
-    padding-bottom: 60px;
-    padding-top: 60px;
+  background: linear-gradient(
+    to bottom,
+    white 0%,
+    #1c1d25 15%,
+    #1c1d25 85%,
+    white 100%
+  );
+  color: white;
+  text-align: center;
+  padding-bottom: 60px;
+  padding-top: 60px;
 }
 
 footer {
@@ -745,6 +751,7 @@ a {
         transform: translateY(-8px) rotate(-45deg);
     }
 }
+
 
 
 
