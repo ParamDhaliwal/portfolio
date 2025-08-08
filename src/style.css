@@ -32,7 +32,7 @@ section {
 }
 
 #projects.sub-section-alternative {
-    background-color: black;
+    background-color: #1c1d25;
     color: white;
     text-align: center;
     padding-bottom: 20px;
@@ -465,6 +465,7 @@ p {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+	color: black;
 }
 
 .project-card {
@@ -744,5 +745,6 @@ a {
         transform: translateY(-8px) rotate(-45deg);
     }
 }
+
 
 
