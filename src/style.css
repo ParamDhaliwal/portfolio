@@ -31,7 +31,7 @@ section {
     font-size: 40px;
 }
 
-.projects {
+#projects.sub-section-alternative {
     background-color: black;
     color: white;
     text-align: center;
@@ -744,4 +744,5 @@ a {
         transform: translateY(-8px) rotate(-45deg);
     }
 }
+
 
