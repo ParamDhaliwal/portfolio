@@ -31,19 +31,19 @@ section {
     font-size: 40px;
 }
 
-#projects.sub-section-alternative {
+/* #projects.sub-section-alternative {
   background: linear-gradient(
     to bottom,
     white 0%,
-    #1c1d25 5%,     /* quick fade in */
-    #1c1d25 95%,    /* solid color most of the way */
-    white 100%      /* quick fade out */
+    #1c1d25 5%,     
+    #1c1d25 95%,    
+    white 100%      
   );
   color: white;
   text-align: center;
-  padding-top: 90px;    /* taller content padding */
-  padding-bottom: 90px; /* taller content padding */
-}
+  padding-top: 90px;    
+  padding-bottom: 90px; 
+} */
 
 footer {
     background-color: black;
