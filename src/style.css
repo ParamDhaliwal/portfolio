@@ -284,16 +284,16 @@ footer {
 }
 
 /* Mobile responsiveness */
-@media (max-width: 768px) {
+@media only screen and (max-width: 1000px) {
     .information {
         margin-right: 0;
         text-align: center;
-        order: 2; /* keep text below headshot on mobile */
+        order: 1; /* keep text above headshot on mobile */
         font-size: 18px;
     }
 
     .headshot-block {
-        order: 1; /* headshot on top */
+        order: 2; /* headshot below about section */
         margin-bottom: 20px;
     }
 
@@ -804,6 +804,7 @@ a {
         transform: translateY(-8px) rotate(-45deg);
     }
 }
+
 
 
 
