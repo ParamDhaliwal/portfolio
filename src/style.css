@@ -286,18 +286,20 @@ footer {
 }
 
 /* Mobile responsiveness */
-@media only screen and (max-width: 1000px) {
-    .information {
+@media (max-width: 768px) {
+	/* keep text above headshot on mobile */
+/*     .information {
         margin-right: 0;
         text-align: center;
-        order: 1; /* keep text above headshot on mobile */
+        order: 1; 
         font-size: 18px;
-    }
+    } */
 
-    .headshot-block {
-        order: 2; /* headshot below about section */
+	/* headshot below about section */
+/*     .headshot-block {
+        order: 2; 
         margin-bottom: 20px;
-    }
+    } */
 
     .skills-grid {
         grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
@@ -701,7 +703,7 @@ li {
     color: #ec4e1a;
 }
 
-@media only screen and (max-width: 1000px) {
+@media (max-width: 768px) {
     .project-container {
         display: flex;
         flex-wrap: wrap;
@@ -723,7 +725,7 @@ a {
     color: white;
 }
 
-@media only screen and (max-width: 1000px) {
+@media (max-width: 768px) {
     header {
         background-color: rgb(44, 45, 55);
         position: fixed;
@@ -806,4 +808,5 @@ a {
         transform: translateY(-8px) rotate(-45deg);
     }
 }
+
 
