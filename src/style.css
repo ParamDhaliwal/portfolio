@@ -224,6 +224,35 @@ footer {
     white-space: nowrap;
   }
 
+/* About Section Wrapper */
+.about-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Text block */
+.information {
+    margin-right: 220px;
+    font-size: 20px;
+    padding: 5px;
+    margin-bottom: 10px;
+    margin-top: -20px;
+    order: 2; /* Default: text below headshot */
+}
+
+/* Headshot block */
+.headshot-block {
+    order: 1; /* Default: headshot on top */
+    margin-bottom: 20px;
+}
+
+/* Links in About section */
+.about-href {
+    color: #ec4e1a;
+}
+
+/* Skills grid */
 .skills-tools {
     max-width: 1500px;
     margin-left: 0;
@@ -232,9 +261,9 @@ footer {
 
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* Increase min-width to 100px */
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
     gap: 30px;
-    justify-items: start;
+    justify-items: center; /* Center logos in their grid cells */
 }
 
 .skill-item {
@@ -252,6 +281,26 @@ footer {
 .skill-logo:hover {
     transform: scale(1.2);
     filter: brightness(1);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .information {
+        margin-right: 0;
+        text-align: center;
+        order: 2; /* keep text below headshot on mobile */
+        font-size: 18px;
+    }
+
+    .headshot-block {
+        order: 1; /* headshot on top */
+        margin-bottom: 20px;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+        gap: 20px;
+    }
 }
 
 h1 {
@@ -755,6 +804,7 @@ a {
         transform: translateY(-8px) rotate(-45deg);
     }
 }
+
 
 
 
