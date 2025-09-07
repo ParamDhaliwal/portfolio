@@ -20,17 +20,12 @@ function closeMenu() {
 const titles = [
     "Software Engineer",
     "Salesforce Developer",
-    "Technical Consultant",
-    "MuleSoft Developer",
     "Full Stack Developer",
-    "Cloud Integration Specialist",
     "API Engineer",
     "DevOps Consultant",
     "CRM Strategist",
     "Backend Engineer",
-    "Solution Engineer",
-    "Integration Developer",
-    "Data Migration Expert",
+    "Solution Architect",
     "CI/CD Engineer",
     "JavaScript Developer",
     "Technical Architect"
@@ -49,8 +44,8 @@ const track = document.querySelector(".text-track");
   let currentIndex = 0;
 
   function spinWithBlur() {
-    let spinSteps = 35 + Math.floor(Math.random() * 10); // More steps = faster blur
-    let delay = 50;
+    let spinSteps = 30 + Math.floor(Math.random() * 10); // More steps = faster blur
+    let delay = 60;
 
     track.classList.add("blurry"); // Add blur before spinning
     track.style.transition = `transform ${delay}ms linear`;
@@ -75,7 +70,7 @@ const track = document.querySelector(".text-track");
           void track.offsetWidth; // force reflow
           track.style.transition = `transform ${delay}ms linear`;
 
-          setTimeout(spinWithBlur, 3500); // Pause before next spin
+          setTimeout(spinWithBlur, 3000); // Pause before next spin
         }, 100); // Short pause to remove blur before holding
       }
     }, delay);
@@ -152,3 +147,4 @@ function scrollCerts(direction) {
 document.addEventListener('DOMContentLoaded', type);
 
 document.addEventListener('DOMContentLoaded', type);
+
