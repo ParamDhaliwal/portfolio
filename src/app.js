@@ -16,8 +16,18 @@ function closeMenu() {
     navMenu.classList.remove("active");
 }
 
-// Titles
 const titles = [
+  "Software Engineer",
+  "Salesforce Developer",
+  "Full Stack Developer",
+  "API Engineer",
+  "DevOps Consultant",
+  "CRM Strategist",
+  "Backend Engineer",
+  "Solution Architect",
+  "CI/CD Engineer",
+  "JavaScript Developer",
+  "Technical Architect",
   "Software Engineer",
   "Salesforce Developer",
   "Full Stack Developer",
@@ -33,7 +43,7 @@ const titles = [
 
 const track = document.querySelector(".text-track");
 
-// Add titles multiple times for smooth spinning
+// Duplicate titles so there's enough to scroll through
 const allTitles = [...titles, ...titles, ...titles];
 allTitles.forEach(title => {
   const span = document.createElement("span");
@@ -43,36 +53,38 @@ allTitles.forEach(title => {
 
 let currentIndex = 0;
 
-function spinFast() {
-  let spinSteps = 50 + Math.floor(Math.random() * 20); // more steps = longer reel
-  let delay = 15; // super fast per step
+function spinReel() {
+  let spinSteps = 50 + Math.floor(Math.random() * 20); // length of spin
+  let step = 0;
 
-  track.style.transition = `transform ${delay}ms linear`;
-
-  const spinInterval = setInterval(() => {
+  function stepSpin() {
+    step++;
     currentIndex++;
+
+    // Ease-out slowing effect (fast first, slow later)
+    let progress = step / spinSteps;
+    let delay = 10 + progress * 40; // starts ~10ms, ends ~50ms
+
+    track.style.transition = `transform ${delay}ms linear`;
     track.style.transform = `translateY(-${currentIndex * 3}rem)`;
-    spinSteps--;
 
-    if (spinSteps <= 0) {
-      clearInterval(spinInterval);
+    if (step < spinSteps) {
+      setTimeout(stepSpin, delay);
+    } else {
+      // Clean stop on real title
+      currentIndex = currentIndex % titles.length;
+      track.style.transition = "none";
+      track.style.transform = `translateY(-${currentIndex * 3}rem)`;
 
-      setTimeout(() => {
-        // Reset to real index to avoid buildup
-        currentIndex = currentIndex % titles.length;
-        track.style.transition = "none";
-        track.style.transform = `translateY(-${currentIndex * 3}rem)`;
-
-        void track.offsetWidth; // force reflow
-        track.style.transition = `transform ${delay}ms linear`;
-
-        setTimeout(spinFast, 3000); // pause before next spin
-      }, 100);
+      // Restart after pause
+      setTimeout(spinReel, 3000);
     }
-  }, delay);
+  }
+
+  stepSpin();
 }
 
-spinFast();
+spinReel();
 
   function toggleMoreAboutMe() {
     const moreText = document.getElementById("more-about-me");
@@ -143,5 +155,6 @@ function scrollCerts(direction) {
 document.addEventListener('DOMContentLoaded', type);
 
 document.addEventListener('DOMContentLoaded', type);
+
 
 
