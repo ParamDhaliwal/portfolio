@@ -455,18 +455,6 @@ p {
     align-items: center;
 }
 
-.headshot-card {
-  position: relative;
-  overflow: hidden;
-}
-
-.headshot-card .project-image {
-  display: block;
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-}
-
 .overlay-text {
   text-align: center;
 }
@@ -767,6 +755,7 @@ a {
         transform: translateY(-8px) rotate(-45deg);
     }
 }
+
 
 
 
