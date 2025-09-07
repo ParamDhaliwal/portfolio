@@ -232,20 +232,22 @@ footer {
 }
 
 /* Text block */
-.information {
+/* Default: text below headshot */
+/* .information {
     margin-right: 220px;
     font-size: 20px;
     padding: 5px;
     margin-bottom: 10px;
     margin-top: -20px;
-    order: 2; /* Default: text below headshot */
-}
+    order: 2; 
+} */
 
 /* Headshot block */
-.headshot-block {
-    order: 1; /* Default: headshot on top */
+/* Default: headshot on top */
+/* .headshot-block {
+    order: 1; 
     margin-bottom: 20px;
-}
+} */
 
 /* Links in About section */
 .about-href {
@@ -804,3 +806,4 @@ a {
         transform: translateY(-8px) rotate(-45deg);
     }
 }
+
