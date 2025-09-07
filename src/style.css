@@ -255,7 +255,7 @@ footer {
 }
 
 /* Skills grid */
-.skills-tools {
+/* .skills-tools {
     max-width: 1500px;
     margin-left: 0;
     margin-right: auto;
@@ -265,7 +265,7 @@ footer {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
     gap: 30px;
-    justify-items: center; /* Center logos in their grid cells */
+    justify-items: center;
 }
 
 .skill-item {
@@ -283,6 +283,54 @@ footer {
 .skill-logo:hover {
     transform: scale(1.2);
     filter: brightness(1);
+} */
+/* Skills Section Wrapper */
+.skills-tools {
+    max-width: 1500px;
+    margin-left: 0;
+    margin-right: auto;
+}
+
+/* Skills Grid Layout */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* Each skill takes min 100px */
+    gap: 30px;
+    justify-items: start; /* Align logos to the start of each grid cell */
+}
+
+/* Individual Skill Item */
+.skill-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Skill Logo Styling */
+.skill-logo {
+    max-width: 70px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    filter: brightness(0.7);
+}
+
+.skill-logo:hover {
+    transform: scale(1.2);
+    filter: brightness(1);
+}
+
+/* About Text Section */
+.info-about {
+    margin-right: 220px;
+    font-size: 20px;
+    padding: 5px;
+    margin-bottom: 10px;
+    margin-top: -20px;
+}
+
+/* About Links */
+.about-href {
+    color: #ec4e1a;
+    text-decoration: none;
 }
 
 /* Mobile responsiveness */
@@ -808,6 +856,7 @@ a {
         transform: translateY(-8px) rotate(-45deg);
     }
 }
+
 
 
 
