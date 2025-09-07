@@ -468,15 +468,7 @@ p {
 }
 
 .overlay-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   text-align: center;
-  color: white;
-  background: rgba(0, 0, 0, 0.5); /* translucent black for readability */
-  padding: 15px 20px;
-  border-radius: 8px;
 }
 
 .info-about {
@@ -775,6 +767,7 @@ a {
         transform: translateY(-8px) rotate(-45deg);
     }
 }
+
 
 
 
