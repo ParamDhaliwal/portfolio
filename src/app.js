@@ -16,67 +16,63 @@ function closeMenu() {
     navMenu.classList.remove("active");
 }
 
-// New typing animation functionality
+// Titles
 const titles = [
-    "Software Engineer",
-    "Salesforce Developer",
-    "Full Stack Developer",
-    "API Engineer",
-    "DevOps Consultant",
-    "CRM Strategist",
-    "Backend Engineer",
-    "Solution Architect",
-    "CI/CD Engineer",
-    "JavaScript Developer",
-    "Technical Architect"
-  ];
+  "Software Engineer",
+  "Salesforce Developer",
+  "Full Stack Developer",
+  "API Engineer",
+  "DevOps Consultant",
+  "CRM Strategist",
+  "Backend Engineer",
+  "Solution Architect",
+  "CI/CD Engineer",
+  "JavaScript Developer",
+  "Technical Architect"
+];
 
 const track = document.querySelector(".text-track");
 
-  // Add titles multiple times for spinning effect
-  const allTitles = [...titles, ...titles, ...titles];
-  allTitles.forEach(title => {
-    const span = document.createElement("span");
-    span.textContent = title;
-    track.appendChild(span);
-  });
+// Add titles multiple times for smooth spinning
+const allTitles = [...titles, ...titles, ...titles];
+allTitles.forEach(title => {
+  const span = document.createElement("span");
+  span.textContent = title;
+  track.appendChild(span);
+});
 
-  let currentIndex = 0;
+let currentIndex = 0;
 
-  function spinWithBlur() {
-    let spinSteps = 30 + Math.floor(Math.random() * 10); // More steps = faster blur
-    let delay = 60;
+function spinFast() {
+  let spinSteps = 50 + Math.floor(Math.random() * 20); // more steps = longer reel
+  let delay = 15; // super fast per step
 
-    track.classList.add("blurry"); // Add blur before spinning
-    track.style.transition = `transform ${delay}ms linear`;
+  track.style.transition = `transform ${delay}ms linear`;
 
-    const spinInterval = setInterval(() => {
-      currentIndex++;
-      track.style.transform = `translateY(-${currentIndex * 3}rem)`;
-      spinSteps--;
+  const spinInterval = setInterval(() => {
+    currentIndex++;
+    track.style.transform = `translateY(-${currentIndex * 3}rem)`;
+    spinSteps--;
 
-      if (spinSteps <= 0) {
-        clearInterval(spinInterval);
+    if (spinSteps <= 0) {
+      clearInterval(spinInterval);
 
-        setTimeout(() => {
-          // Clean landing
-          track.classList.remove("blurry");
+      setTimeout(() => {
+        // Reset to real index to avoid buildup
+        currentIndex = currentIndex % titles.length;
+        track.style.transition = "none";
+        track.style.transform = `translateY(-${currentIndex * 3}rem)`;
 
-          // Reset to real index to avoid buildup
-          currentIndex = currentIndex % titles.length;
-          track.style.transition = "none";
-          track.style.transform = `translateY(-${currentIndex * 3}rem)`;
+        void track.offsetWidth; // force reflow
+        track.style.transition = `transform ${delay}ms linear`;
 
-          void track.offsetWidth; // force reflow
-          track.style.transition = `transform ${delay}ms linear`;
+        setTimeout(spinFast, 3000); // pause before next spin
+      }, 100);
+    }
+  }, delay);
+}
 
-          setTimeout(spinWithBlur, 3000); // Pause before next spin
-        }, 100); // Short pause to remove blur before holding
-      }
-    }, delay);
-  }
-
-  spinWithBlur();
+spinFast();
 
   function toggleMoreAboutMe() {
     const moreText = document.getElementById("more-about-me");
@@ -147,4 +143,5 @@ function scrollCerts(direction) {
 document.addEventListener('DOMContentLoaded', type);
 
 document.addEventListener('DOMContentLoaded', type);
+
 
