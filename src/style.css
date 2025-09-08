@@ -349,7 +349,7 @@ footer {
         order: 2; 
 	    font-size: 20px;
 	    padding: 5px;
-	    margin-bottom: 30px;
+	    margin-bottom: 50px;
 	    margin-top:-20px;
 	}
 
@@ -867,6 +867,7 @@ a {
         transform: translateY(-8px) rotate(-45deg);
     }
 }
+
 
 
 
