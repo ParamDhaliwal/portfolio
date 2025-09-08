@@ -320,6 +320,7 @@ footer {
 
 /* About Text Section */
 .info-about {
+	margin-right: 220px;
     font-size: 20px;
     padding: 5px;
     margin-bottom: 10px;
@@ -341,6 +342,13 @@ footer {
         order: 1; 
         font-size: 18px;
     }
+
+	.info-about {
+		margin-right: 0;
+	    text-align: center;
+        order: 2; 
+        font-size: 18px;
+	}
 
 	/* headshot below about section */
     .headshot-block {
@@ -855,6 +863,7 @@ a {
         transform: translateY(-8px) rotate(-45deg);
     }
 }
+
 
 
 
