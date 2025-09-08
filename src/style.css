@@ -573,9 +573,16 @@ p {
     border-radius: 8px;
 }
 
+.headshot-container {
+    display: flex;
+    align-items: center;
+	justify-content: space-around;
+	color: black;
+}
+
 .headshot-card {
     display: block; /* Allow the entire card to be clickable */
-    width: 300px;
+    width: 400px;
     margin: 20px;
     padding: 20px;
     background-color: #f8f9fa;
@@ -589,10 +596,9 @@ p {
     animation: popUp 0.8s forwards; /* Animation for pop-up effect */
 }
 
-.headshot-container {
-    display: flex;
-    align-items: center;
-	color: black;
+.headshot-card:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3); /* Shadow on hover */
 }
 
 .overlay-text {
@@ -900,6 +906,7 @@ a {
         transform: translateY(-8px) rotate(-45deg);
     }
 }
+
 
 
 
