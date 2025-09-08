@@ -321,7 +321,7 @@ footer {
 
 /* About Text Section */
 .info-about {
-/* 	margin-right: 220px; */
+	margin-right: 180px;
     font-size: 20px;
     padding: 5px;
     margin-bottom: 10px;
@@ -875,6 +875,7 @@ a {
         transform: translateY(-8px) rotate(-45deg);
     }
 }
+
 
 
 
