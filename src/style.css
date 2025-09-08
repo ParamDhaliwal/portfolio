@@ -365,7 +365,7 @@ footer {
         margin-bottom: 20px;
 	    margin-top: 20px;
 		display: flex;
-/* 	  	justify-content: center; */
+	  	justify-content: center;
 	  	align-items: center;
     }
 
@@ -910,6 +910,7 @@ a {
         transform: translateY(-8px) rotate(-45deg);
     }
 }
+
 
 
 
