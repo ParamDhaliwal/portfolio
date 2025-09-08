@@ -341,6 +341,7 @@ footer {
         text-align: center;
         order: 1; 
         font-size: 18px;
+	    margin-bottom: 50px;
     }
 
 	.info-about {
@@ -867,6 +868,7 @@ a {
         transform: translateY(-8px) rotate(-45deg);
     }
 }
+
 
 
 
