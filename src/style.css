@@ -225,11 +225,11 @@ footer {
   }
 
 /* About Section Wrapper */
-.about-wrapper {
+/* .about-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
+} */
 
 /* Text block */
 /* Default: text below headshot */
@@ -897,6 +897,7 @@ a {
         transform: translateY(-8px) rotate(-45deg);
     }
 }
+
 
 
 
