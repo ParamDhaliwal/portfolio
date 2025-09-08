@@ -286,7 +286,7 @@ footer {
 } */
 /* Skills Section Wrapper */
 .skills-tools {
-    max-width: 100px;
+    max-width: 1000px;
     margin-left: 0;
     margin-right: auto;
 }
@@ -875,6 +875,7 @@ a {
         transform: translateY(-8px) rotate(-45deg);
     }
 }
+
 
 
 
