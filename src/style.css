@@ -320,7 +320,6 @@ footer {
 
 /* About Text Section */
 .info-about {
-    margin-right: 220px;
     font-size: 20px;
     padding: 5px;
     margin-bottom: 10px;
@@ -560,13 +559,13 @@ p {
   text-align: center;
 }
 
-.info-about {
+/* .info-about {
     margin-right: 220px;
     font-size: 20px;
     padding: 5px;
     margin-bottom: 10px;
     margin-top:-20px;
-}
+} */
 
 .about-href {
     color: #ec4e1a;
@@ -856,6 +855,7 @@ a {
         transform: translateY(-8px) rotate(-45deg);
     }
 }
+
 
 
 
