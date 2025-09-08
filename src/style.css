@@ -366,7 +366,7 @@ footer {
         margin-bottom: 20px;
 	    margin-top: 20px;
 		display: flex;
-	  	justify-content: center;
+/* 	  	justify-content: center; */
 	  	align-items: center;
     }
 
@@ -581,7 +581,7 @@ p {
 .headshot-container {
     display: flex;
     align-items: center;
-	justify-content: center;
+	justify-content: end;
 	flex: 1; /* Takes about 1/3 of space */
 }
 
@@ -911,6 +911,7 @@ a {
         transform: translateY(-8px) rotate(-45deg);
     }
 }
+
 
 
 
