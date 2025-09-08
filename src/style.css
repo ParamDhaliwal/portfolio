@@ -286,7 +286,7 @@ footer {
 } */
 /* Skills Section Wrapper */
 .skills-tools {
-    max-width: 1500px;
+    max-width: 100px;
     margin-left: 0;
     margin-right: auto;
 }
@@ -297,6 +297,7 @@ footer {
     grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* Each skill takes min 100px */
     gap: 30px;
     justify-items: start; /* Align logos to the start of each grid cell */
+	margin-bottom: 20px;
 }
 
 /* Individual Skill Item */
@@ -364,7 +365,7 @@ footer {
     .skills-grid {
         grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
         gap: 20px;
-	    margin-bottom: 30px;
+	    margin-bottom: 20px;
     }
 }
 
@@ -874,6 +875,7 @@ a {
         transform: translateY(-8px) rotate(-45deg);
     }
 }
+
 
 
 
