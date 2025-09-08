@@ -364,7 +364,7 @@ footer {
     .skills-grid {
         grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
         gap: 20px;
-	    margin-bottom: 50px;
+	    margin-bottom: 30px;
     }
 }
 
@@ -869,6 +869,7 @@ a {
         transform: translateY(-8px) rotate(-45deg);
     }
 }
+
 
 
 
