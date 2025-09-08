@@ -573,6 +573,11 @@ p {
   text-align: center;
 }
 
+.headshot-block {
+	display: flex;
+    align-items: center;
+}
+
 /* .info-about {
     margin-right: 220px;
     font-size: 20px;
@@ -869,6 +874,7 @@ a {
         transform: translateY(-8px) rotate(-45deg);
     }
 }
+
 
 
 
