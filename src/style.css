@@ -349,7 +349,7 @@ footer {
         order: 2; 
 	    font-size: 20px;
 	    padding: 5px;
-	    margin-bottom: 10px;
+	    margin-bottom: 30px;
 	    margin-top:-20px;
 	}
 
@@ -357,6 +357,7 @@ footer {
     .headshot-block {
         order: 2; 
         margin-bottom: 20px;
+	    margin-top: 20px;
     }
 
     .skills-grid {
@@ -866,6 +867,7 @@ a {
         transform: translateY(-8px) rotate(-45deg);
     }
 }
+
 
 
 
