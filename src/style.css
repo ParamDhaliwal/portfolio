@@ -360,6 +360,7 @@ footer {
         order: 2; 
         margin-bottom: 20px;
 	    margin-top: 20px;
+		align: center;
     }
 
     .skills-grid {
@@ -897,6 +898,7 @@ a {
         transform: translateY(-8px) rotate(-45deg);
     }
 }
+
 
 
 
