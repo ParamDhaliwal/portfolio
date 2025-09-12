@@ -835,41 +835,29 @@ a {
     }
 
     .nav-menu {
-        position: fixed;
-        left: 100%;
-        top: 4rem;
+        position: absolute;
+        top: 70px; /* just below header */
+        left: 0;
+        right: 0;
         flex-direction: column;
-        background-color: rgb(44, 45, 55);
-        width: 100%;
+        background: rgb(44, 45, 55);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease-in-out;
         text-align: center;
-        transition: 0.4s;
-        box-shadow: 0 4px 2px -2px black;
     }
 
     .nav-menu.active {
-        left: 0;
+        max-height: 500px;
     }
 
     .nav-item {
-        margin: 2.5rem 0;
+        margin: 1.5rem 0;
     }
 
     .hamburger {
         display: flex;
-        border: 0;
-        background-color: transparent;
-        color: white;
-        font-size: 30px;
-        margin: 20px;
-        align-self: flex-end;
-        cursor: pointer;
-        align-self: flex-start; /* Prevents vertical stretching */
     }
-
-/*     .hamburger {
-        display: flex; 
-        align-self: flex-start; 
-    } */
 
     .logo {
         display: none;
@@ -880,64 +868,27 @@ a {
         font-size: 46px;
         font-weight: bold;
         color: rgb(140, 140, 140);
-        float: left;
         margin-left: 20px;
     }
 
-    ul {
-        display: none;
-    }
-
+    /* ✅ Removed ul { display: none; } */
+    
     nav {
         display: flex;
-        flex-direction: column-reverse;
+        flex-direction: column;
         background-color: rgb(44, 45, 55);
         align-items: center;
         margin-left: .8rem;
     }
 
+    /* Hamburger animation */
     .hamburger.active .bar:nth-child(2) {
         opacity: 0;
     }
-
     .hamburger.active .bar:nth-child(1) {
-        -webkit-transform: translateY(8px) rotate(45deg);
         transform: translateY(8px) rotate(45deg);
     }
-
     .hamburger.active .bar:nth-child(3) {
-        -webkit-transform: translateY(-8px) rotate(-45deg);
         transform: translateY(-8px) rotate(-45deg);
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
