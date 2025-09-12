@@ -1,20 +1,47 @@
 // Existing hamburger menu functionality
-const hamburger = document.querySelector(".hamburger");
-const navMenu = document.querySelector(".nav-menu");
-const navLink = document.querySelectorAll(".nav-link");
+// const hamburger = document.querySelector(".hamburger");
+// const navMenu = document.querySelector(".nav-menu");
+// const navLink = document.querySelectorAll(".nav-link");
 
-hamburger.addEventListener("click", mobileMenu);
-navLink.forEach(n => n.addEventListener("click", closeMenu));
+// hamburger.addEventListener("click", mobileMenu);
+// navLink.forEach(n => n.addEventListener("click", closeMenu));
 
-function mobileMenu() {
-    hamburger.classList.toggle("active");
-    navMenu.classList.toggle("active");
+// function mobileMenu() {
+//     hamburger.classList.toggle("active");
+//     navMenu.classList.toggle("active");
+// }
+
+// function closeMenu() {
+//     hamburger.classList.remove("active");
+//     navMenu.classList.remove("active");
+// }
+
+const hamburger = document.querySelector('.hamburger');
+const navMenu   = document.querySelector('.nav-menu');
+const navLinks  = document.querySelectorAll('.nav-link');
+
+function toggleMenu() {
+  const isActive = hamburger.classList.toggle('active');
+  navMenu.classList.toggle('active', isActive);
+
+  // Accessibility
+  hamburger.setAttribute('aria-expanded', String(isActive));
+
+  // Prevent body scroll when open
+  document.documentElement.classList.toggle('body-no-scroll', isActive);
 }
 
-function closeMenu() {
-    hamburger.classList.remove("active");
-    navMenu.classList.remove("active");
-}
+hamburger.addEventListener('click', toggleMenu);
+
+// Close on link click
+navLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    hamburger.classList.remove('active');
+    navMenu.classList.remove('active');
+    hamburger.setAttribute('aria-expanded','false');
+    document.documentElement.classList.remove('body-no-scroll');
+  });
+});
 
 const titles = [
   "Software Engineer",
@@ -155,6 +182,7 @@ function scrollCerts(direction) {
 document.addEventListener('DOMContentLoaded', type);
 
 document.addEventListener('DOMContentLoaded', type);
+
 
 
 
