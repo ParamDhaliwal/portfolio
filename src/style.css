@@ -848,6 +848,10 @@ a {
 
 @media (max-width: 768px) {
 
+	.header {
+		position: sticky;
+	}
+
   /* show hamburger, hide inline menu */
   .hamburger { 
 	  display: inline-flex; 
@@ -900,4 +904,5 @@ a {
 
 /* Prevent body scroll when menu open */
 .body-no-scroll { overflow: hidden !important; }
+
 
