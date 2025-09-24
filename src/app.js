@@ -81,7 +81,7 @@ function rotateWords() {
 }
 
 setupWords();
-setInterval(rotateWords, 2000); // change 3000 → 4000 if you want slower
+setInterval(rotateWords, 2500); // change 3000 → 4000 if you want slower
 
 
 let i = 0; // Current role index
@@ -142,6 +142,7 @@ function scrollCerts(direction) {
 document.addEventListener('DOMContentLoaded', type);
 
 document.addEventListener('DOMContentLoaded', type);
+
 
 
 
