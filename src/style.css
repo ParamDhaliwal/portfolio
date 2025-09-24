@@ -50,29 +50,33 @@ section {
     font-size: 40px;
 }
 
-.word-rotator {
+.role-text {
   display: inline-block;
   position: relative;
   vertical-align: middle;
   overflow: hidden;
-  height: 1em; /* enough for one line of text */
+  height: 1em; /* fit one line */
 }
 
-.word {
+.text-track {
+  position: relative;
+  display: inline-block;
+}
+
+.text-track .word {
   position: absolute;
   top: 0;
   left: 0;
   opacity: 0;
   transform: translateY(100%);
-  transition: opacity 0.4s ease, transform 0.4s ease;
+  transition: opacity 0.5s ease, transform 0.5s ease;
   white-space: nowrap;
 }
 
-.word.show {
+.text-track .word.show {
   opacity: 1;
   transform: translateY(0);
 }
-
 
 /* #projects.sub-section-alternative {
   background: linear-gradient(
@@ -928,6 +932,7 @@ a {
 
 /* Prevent body scroll when menu open */
 .body-no-scroll { overflow: hidden !important; }
+
 
 
 
