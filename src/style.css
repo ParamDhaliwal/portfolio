@@ -43,37 +43,12 @@ section {
     background-color: white;
 }
 
-/* .hero {
+.hero {
     background-color: #1c1d25;
     height: 100vh;
     color: white;
     font-size: 40px;
-} */
-
-.hero {
-  position: relative;
-  background-color: #1c1d25;
-  height: 100vh;
-  color: white;
-  overflow: hidden;
 }
-
-.hero::before {
-  content: '';
-  position: absolute;
-  width: 200%;
-  height: 200%;
-  background-image: radial-gradient(#fff 1px, transparent 1px);
-  background-size: 50px 50px;
-  animation: moveDots 20s linear infinite;
-  opacity: 0.2;
-}
-
-@keyframes moveDots {
-  0% { transform: translate(0,0); }
-  100% { transform: translate(-100px, -100px); }
-}
-
 
 .role-text {
   display: inline-block;
@@ -974,6 +949,7 @@ a {
 
 /* Prevent body scroll when menu open */
 .body-no-scroll { overflow: hidden !important; }
+
 
 
 
