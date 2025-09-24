@@ -43,12 +43,49 @@ section {
     background-color: white;
 }
 
-.hero {
+/* .hero {
     background-color: #1c1d25;
     height: 100vh;
     color: white;
     font-size: 40px;
+} */
+
+.hero {
+    position: relative;
+    background-color: #1c1d25;
+    height: 100vh;
+    color: white;
+    font-size: 40px;
+    overflow: hidden;
 }
+
+/* Moving techy dot mesh */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    background-image: radial-gradient(circle, rgba(255,255,255,0.08) 1px, transparent 1px);
+    background-size: 60px 60px;
+    animation: meshMove 20s linear infinite;
+    z-index: 0;
+}
+
+/* Keep content above background */
+.hero-area,
+.header {
+    position: relative;
+    z-index: 1;
+}
+
+/* Animation for mesh */
+@keyframes meshMove {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(-60px, -60px); }
+}
+
 
 .role-text {
   display: inline-block;
@@ -949,6 +986,7 @@ a {
 
 /* Prevent body scroll when menu open */
 .body-no-scroll { overflow: hidden !important; }
+
 
 
 
