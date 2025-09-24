@@ -43,18 +43,7 @@ navLinks.forEach(link => {
   });
 });
 
-const titles = [
-  "Software Engineer",
-  "Salesforce Developer",
-  "Full Stack Developer",
-  "API Engineer",
-  "DevOps Consultant",
-  "CRM Strategist",
-  "Backend Engineer",
-  "Solution Architect",
-  "CI/CD Engineer",
-  "JavaScript Developer",
-  "Technical Architect",
+const words = [
   "Software Engineer",
   "Salesforce Developer",
   "Full Stack Developer",
@@ -68,61 +57,33 @@ const titles = [
   "Technical Architect"
 ];
 
-const track = document.querySelector(".text-track");
+const rotator = document.querySelector(".word-rotator");
 
-// Duplicate titles so there's enough to scroll through
-const allTitles = [...titles, ...titles, ...titles];
-allTitles.forEach(title => {
-  const span = document.createElement("span");
-  span.textContent = title;
-  track.appendChild(span);
-});
+let current = 0;
 
-let currentIndex = 0;
-
-function spinReel() {
-  let spinSteps = 50 + Math.floor(Math.random() * 20); // length of spin
-  let step = 0;
-
-  function stepSpin() {
-    step++;
-    currentIndex++;
-
-    // Ease-out slowing effect (fast first, slow later)
-    let progress = step / spinSteps;
-    let delay = 10 + progress * 40; // starts ~10ms, ends ~50ms
-
-    track.style.transition = `transform ${delay}ms linear`;
-    track.style.transform = `translateY(-${currentIndex * 3}rem)`;
-
-    if (step < spinSteps) {
-      setTimeout(stepSpin, delay);
-    } else {
-      // Clean stop on real title
-      currentIndex = currentIndex % titles.length;
-      track.style.transition = "none";
-      track.style.transform = `translateY(-${currentIndex * 3}rem)`;
-
-      // Restart after pause
-      setTimeout(spinReel, 3000);
-    }
-  }
-
-  stepSpin();
+function setupWords() {
+  words.forEach((w, idx) => {
+    const span = document.createElement("span");
+    span.classList.add("word");
+    if (idx === 0) span.classList.add("show");
+    span.textContent = w;
+    rotator.appendChild(span);
+  });
 }
 
-spinReel();
+function rotateWords() {
+  const wordSpans = rotator.querySelectorAll(".word");
+  const prev = wordSpans[current];
+  prev.classList.remove("show");
 
-  function toggleMoreAboutMe() {
-    const moreText = document.getElementById("more-about-me");
-    const toggle = document.querySelector(".expand-toggle");
+  current = (current + 1) % words.length;
+  const next = wordSpans[current];
+  next.classList.add("show");
+}
 
-    const isCollapsed = moreText.classList.contains("collapsed");
-    moreText.classList.toggle("collapsed", !isCollapsed);
-    moreText.classList.toggle("expanded", isCollapsed);
+setupWords();
+setInterval(rotateWords, 4000);
 
-    toggle.textContent = isCollapsed ? "[−]" : "[+]";
-  }
 
 let i = 0; // Current role index
 let j = 0; // Current character index in the role
@@ -182,6 +143,7 @@ function scrollCerts(direction) {
 document.addEventListener('DOMContentLoaded', type);
 
 document.addEventListener('DOMContentLoaded', type);
+
 
 
 
