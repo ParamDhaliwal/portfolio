@@ -404,7 +404,7 @@ footer {
 }
 
 /* Mobile responsiveness */
-@media (max-width: 768px) {
+@media (max-width: 2500px) {
 	/* keep text above headshot on mobile */
     .information {
         margin-right: 0;
@@ -893,7 +893,7 @@ li {
     color: #ec4e1a;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 2500px) {
     .project-container {
         display: flex;
         flex-wrap: wrap;
@@ -915,7 +915,7 @@ a {
     color: white;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 2500px) {
 
 	.header {
 		position: sticky;
@@ -973,6 +973,7 @@ a {
 
 /* Prevent body scroll when menu open */
 .body-no-scroll { overflow: hidden !important; }
+
 
 
 
