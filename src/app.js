@@ -57,8 +57,7 @@ const words = [
   "Technical Architect"
 ];
 
-const rotator = document.querySelector(".word-rotator");
-
+const track = document.querySelector(".text-track");
 let current = 0;
 
 function setupWords() {
@@ -67,12 +66,12 @@ function setupWords() {
     span.classList.add("word");
     if (idx === 0) span.classList.add("show");
     span.textContent = w;
-    rotator.appendChild(span);
+    track.appendChild(span);
   });
 }
 
 function rotateWords() {
-  const wordSpans = rotator.querySelectorAll(".word");
+  const wordSpans = track.querySelectorAll(".word");
   const prev = wordSpans[current];
   prev.classList.remove("show");
 
@@ -82,7 +81,7 @@ function rotateWords() {
 }
 
 setupWords();
-setInterval(rotateWords, 4000);
+setInterval(rotateWords, 3000); // change 3000 → 4000 if you want slower
 
 
 let i = 0; // Current role index
@@ -143,6 +142,7 @@ function scrollCerts(direction) {
 document.addEventListener('DOMContentLoaded', type);
 
 document.addEventListener('DOMContentLoaded', type);
+
 
 
 
