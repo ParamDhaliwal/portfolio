@@ -472,18 +472,42 @@ p {
     background-color: #1c1d25;
 } */
 
-.hero-area {
+/* .hero-area {
     display: flex;
     height: 100%;
     justify-content: space-between;
     margin-top: 260px;
-    width: 100%;
+    width: 100%; */
 /*     align-items: center; */
+/* } */
+
+/* .hero-text {
+    margin-left: 80px;
+    margin-top: 10px;
+} */
+
+.hero-area {
+  position: relative; /* So content stays above canvas */
+  z-index: 1;         /* Make text appear above canvas */
+  display: flex;
+  height: 100%;
+  justify-content: flex-start; /* Or space-between if you want */
+  align-items: center;
+  padding-left: 80px;
 }
 
 .hero-text {
-    margin-left: 80px;
-    margin-top: 10px;
+  margin: 0; /* Remove extra margin */
+  z-index: 2;
+}
+
+#heroCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0; /* Behind the hero text */
 }
 
 .button {
@@ -949,6 +973,7 @@ a {
 
 /* Prevent body scroll when menu open */
 .body-no-scroll { overflow: hidden !important; }
+
 
 
 
