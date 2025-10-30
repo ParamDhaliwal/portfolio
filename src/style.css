@@ -510,13 +510,13 @@ p {
   z-index: 0; /* Behind the hero text */
 }
 
-.button {
+/* .button {
     width: 180px;
     height: 48px;
     border-radius: 30px;
     background-color: #ec4e1a;
     text-align: center;
-    font-size: 28px;
+    font-size: 26px;
     font-weight: 300;
     padding-top: 5px;
     margin-top: 20px;
@@ -529,6 +529,33 @@ p {
 .button:active {
     background-color: #A9A9A9;
     color: #808080;
+} */
+
+.button {
+	display: inline-block;
+	width: 160px;
+	height: 44px;
+	border-radius: 30px;
+	background-color: #ec4e1a;
+	color: white;
+	text-align: center;
+	line-height: 44px;
+	font-size: 18px;
+	font-weight: 400;
+	text-decoration: none;
+	transition: background-color 0.3s ease, transform 0.1s ease;
+	margin-top: 20px;
+}
+
+.button:hover {
+	background-color: coral;
+	transform: translateY(-2px);
+}
+
+.button:active {
+	background-color: #a9a9a9;
+	color: #f0f0f0;
+	transform: translateY(0);
 }
 
 .button-resume {
@@ -973,6 +1000,7 @@ a {
 
 /* Prevent body scroll when menu open */
 .body-no-scroll { overflow: hidden !important; }
+
 
 
 
