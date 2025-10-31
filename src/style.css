@@ -604,17 +604,17 @@ p {
 } */
 
 .social-git a:hover{
-	background-color: #CFCFCF;
+	background-color: #ec4e1a;
 	transition:all ease 0.5s;
 }
 
 .social-linkedin a:hover{
-	background-color:blue;
+	background-color:#ec4e1a;
 	transition:all ease 0.5s;
 }
 
 .social-gmail a:hover{
-	background-color:red;
+	background-color:#ec4e1a;
 	transition:all ease 0.5s;
 }
 
@@ -1000,6 +1000,7 @@ a {
 
 /* Prevent body scroll when menu open */
 .body-no-scroll { overflow: hidden !important; }
+
 
 
 
