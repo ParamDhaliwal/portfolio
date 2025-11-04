@@ -24,7 +24,7 @@ window.addEventListener('load', () => {
   // Hide after 3 seconds
   setTimeout(() => {
     toast.classList.remove('show');
-  }, 3000);
+  }, 6000);
 });
 
 const hamburger = document.querySelector('.hamburger');
@@ -219,6 +219,7 @@ function scrollCerts(direction) {
 document.addEventListener('DOMContentLoaded', type);
 
 document.addEventListener('DOMContentLoaded', type);
+
 
 
 
