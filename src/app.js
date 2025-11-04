@@ -21,10 +21,11 @@ window.addEventListener('load', () => {
   const toast = document.getElementById('toast');
   toast.classList.add('show');
 
-  // Hide after 3 seconds
+  // Hide after 6 seconds
   setTimeout(() => {
     toast.classList.remove('show');
   }, 6000);
+    }, 2000); // 2000ms = 2 seconds
 });
 
 const hamburger = document.querySelector('.hamburger');
@@ -219,6 +220,7 @@ function scrollCerts(direction) {
 document.addEventListener('DOMContentLoaded', type);
 
 document.addEventListener('DOMContentLoaded', type);
+
 
 
 
