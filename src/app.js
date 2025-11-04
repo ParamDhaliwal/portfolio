@@ -16,6 +16,17 @@
 //     navMenu.classList.remove("active");
 // }
 
+// Show toast after page load
+window.addEventListener('load', () => {
+  const toast = document.getElementById('toast');
+  toast.classList.add('show');
+
+  // Hide after 3 seconds
+  setTimeout(() => {
+    toast.classList.remove('show');
+  }, 3000);
+});
+
 const hamburger = document.querySelector('.hamburger');
 const navMenu   = document.querySelector('.nav-menu');
 const navLinks  = document.querySelectorAll('.nav-link');
@@ -208,6 +219,7 @@ function scrollCerts(direction) {
 document.addEventListener('DOMContentLoaded', type);
 
 document.addEventListener('DOMContentLoaded', type);
+
 
 
 
