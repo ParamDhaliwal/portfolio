@@ -7,6 +7,32 @@
   --header-height: 64px; /* adjust if you want taller header */
 }
 
+/* Toast styles */
+#toast {
+	visibility: hidden;
+	min-width: 250px;
+	margin-left: -125px;
+	background-color: #333;
+	color: #fff;
+	text-align: center;
+	border-radius: 8px;
+	padding: 16px;
+	position: fixed;
+	z-index: 1000;
+	left: 50%;
+	bottom: 30px;
+	font-size: 16px;
+	box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
+	opacity: 0;
+	transition: opacity 0.5s, bottom 0.5s;
+}
+
+#toast.show {
+	visibility: visible;
+	opacity: 1;
+	bottom: 50px;
+}
+
 /* Header (desktop-first) */
 .header {
   position: sticky;
@@ -1000,6 +1026,7 @@ a {
 
 /* Prevent body scroll when menu open */
 .body-no-scroll { overflow: hidden !important; }
+
 
 
 
