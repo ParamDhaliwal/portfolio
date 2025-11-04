@@ -24,8 +24,8 @@ window.addEventListener('load', () => {
 
     setTimeout(() => {
       toast.classList.remove('show');
-    }, 6000);
-  }, 2000); // delay 2 seconds
+    }, 10000);
+  }, 1500); // delay 1.5 seconds
 });
 
 const hamburger = document.querySelector('.hamburger');
@@ -220,6 +220,7 @@ function scrollCerts(direction) {
 document.addEventListener('DOMContentLoaded', type);
 
 document.addEventListener('DOMContentLoaded', type);
+
 
 
 
