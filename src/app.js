@@ -19,28 +19,24 @@
 // Show toast after page load
   window.addEventListener('load', () => {
     const toast = document.getElementById('toast');
-    const closeBtn = document.getElementById('close-btn');
 
-    // Show after 1 seconds
+    // Show after 2 seconds
     setTimeout(() => {
       toast.classList.add('show');
 
-      // Auto-hide after 8 seconds
+      // Auto-hide after 3 seconds
       setTimeout(() => hideToast(), 8000);
     }, 1000);
-
-    // Manual close
-    closeBtn.addEventListener('click', hideToast);
 
     function hideToast() {
       toast.classList.remove('show');
       toast.classList.add('hide');
 
-      // Wait for animation to finish before hiding completely
+      // Wait for animation to finish before fully hiding
       setTimeout(() => {
         toast.classList.remove('hide');
         toast.style.visibility = 'hidden';
-      }, 400);
+      }, 1000);
     }
   });
 
@@ -236,6 +232,7 @@ function scrollCerts(direction) {
 document.addEventListener('DOMContentLoaded', type);
 
 document.addEventListener('DOMContentLoaded', type);
+
 
 
 
