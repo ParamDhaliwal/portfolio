@@ -21,7 +21,7 @@ window.addEventListener('load', () => {
 const toast = document.getElementById('toast');
 const closeBtn = document.getElementById('toast-close');
 
-// Show after 2 seconds
+// Show after 1.5 seconds
 setTimeout(() => {
   toast.classList.add('show');
 
@@ -30,7 +30,7 @@ setTimeout(() => {
     toast.classList.remove('show');
     toast.classList.add('hide');
   }, 10000);
-}, 2000);
+}, 1500);
 
 // Allow manual close
 closeBtn.addEventListener('click', () => {
@@ -231,6 +231,7 @@ function scrollCerts(direction) {
 document.addEventListener('DOMContentLoaded', type);
 
 document.addEventListener('DOMContentLoaded', type);
+
 
 
 
