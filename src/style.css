@@ -8,7 +8,7 @@
 }
 
   /* Toast container */
-  #toast {
+  /* #toast {
     visibility: hidden;
     min-width: 250px;
     margin-left: -125px;
@@ -30,29 +30,29 @@
     transition: opacity 0.5s ease, bottom 0.5s ease, transform 0.3s ease;
     overflow: visible !important; /* ensure elements outside are visible */
     isolation: isolate; /* prevent z-index stacking issues */
-  }
+  } */
 
   /* Visible toast */
-  #toast.show {
+  /* #toast.show {
     visibility: visible;
     opacity: 1;
     bottom: 50px;
-  }
+  } */
 
     /* When hiding */
-  #toast.hide {
+  /* #toast.hide {
     opacity: 0;
     bottom: 0;
     transition:
       opacity 1s ease,
       bottom 1s cubic-bezier(0.45, 0, 0.55, 1);
-  }
+  } */
 
   /* Hover enlarges the toast */
-  #toast:hover {
+  /* #toast:hover {
     transform: scale(1.15);
     box-shadow: 0 16px 64px rgba(0, 0, 0, 0.5), 0 0 30px rgba(0, 200, 255, 0.5);
-  }
+  } */
 
   /* Close button (hidden by default) */
   /* #toast-close {
@@ -82,6 +82,48 @@
     opacity: 1;
     transform: scale(1.2);
   } */
+
+#toast {
+    visibility: hidden;
+    min-width: 280px;
+    padding: 16px 24px;
+    position: fixed;
+    z-index: 1000;
+    left: 50%;
+    bottom: 30px;
+    transform: translateX(-50%) scale(1);
+    font-size: 16px;
+    text-align: center;
+    border-radius: 20px;
+    color: #fff;
+    background: rgba(50, 50, 50, 0.35);
+    backdrop-filter: blur(10px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4),
+                0 0 20px rgba(0, 150, 255, 0.3);
+    opacity: 0;
+    transition:
+      opacity 0.4s ease,
+      bottom 0.4s cubic-bezier(0.55, 0, 0.55, 0.2);
+  }
+
+  /* Show toast */
+  #toast.show {
+    visibility: visible;
+    opacity: 1;
+    bottom: 50px;
+  }
+
+  /* Exit toast */
+  #toast.hide {
+    opacity: 0;
+    bottom: -100px;
+  }
+
+  /* Hover effect */
+  #toast:hover {
+    transform: translateX(-50%) scale(1.1);
+  }
 
 /* Header (desktop-first) */
 .header {
@@ -1076,6 +1118,7 @@ a {
 
 /* Prevent body scroll when menu open */
 .body-no-scroll { overflow: hidden !important; }
+
 
 
 
