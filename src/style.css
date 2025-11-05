@@ -24,11 +24,17 @@
     background: rgba(50, 50, 50, 0.3);
     backdrop-filter: blur(10px) saturate(180%);
     border: 1px solid rgba(255, 255, 255, 0.4);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 15px rgba(0, 200, 255, 0.3);
+    /* box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 15px rgba(0, 200, 255, 0.3); */
     opacity: 0;
     transform: scale(1);
     transition: opacity 0.5s ease, bottom 0.5s ease, transform 0.3s ease;
     overflow: hidden;
+  /* Multi-color glowing effect */
+    box-shadow:
+      0 0 25px rgba(255, 165, 0, 0.5),    /* orange */
+      0 0 45px rgba(255, 0, 200, 0.4),   /* pink */
+      0 0 70px rgba(0, 180, 255, 0.4),   /* blue */
+      0 0 100px rgba(255, 165, 0, 0.25); /* wide orange halo */
   }
 
   /* Visible toast */
@@ -1068,6 +1074,7 @@ a {
 
 /* Prevent body scroll when menu open */
 .body-no-scroll { overflow: hidden !important; }
+
 
 
 
