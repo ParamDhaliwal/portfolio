@@ -18,15 +18,26 @@
 
 // Show toast after page load
 window.addEventListener('load', () => {
-  setTimeout(() => {
     const toast = document.getElementById('toast');
-    toast.classList.add('show');
+    const closeBtn = document.getElementById('toast-close');
 
+    // Show after 2 seconds
     setTimeout(() => {
-      toast.classList.remove('show');
+      toast.classList.add('show');
+
+      // Auto-hide after 3 seconds
+      setTimeout(() => {
+        toast.classList.remove('show');
+        toast.classList.add('hide');
+      }, 3000);
     }, 10000);
-  }, 1500); // delay 1.5 seconds
-});
+
+    // Allow manual close
+    closeBtn.addEventListener('click', () => {
+      toast.classList.remove('show');
+      toast.classList.add('hide');
+    });
+  });
 
 const hamburger = document.querySelector('.hamburger');
 const navMenu   = document.querySelector('.nav-menu');
@@ -220,6 +231,7 @@ function scrollCerts(direction) {
 document.addEventListener('DOMContentLoaded', type);
 
 document.addEventListener('DOMContentLoaded', type);
+
 
 
 
