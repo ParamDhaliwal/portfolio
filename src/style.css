@@ -47,7 +47,7 @@
 
   /* Hover enlarges the toast */
   #toast:hover {
-    transform: scale(1.50);
+    transform: scale(1.20);
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5), 0 0 25px rgba(0, 200, 255, 0.4);
   }
 
@@ -1068,6 +1068,7 @@ a {
 
 /* Prevent body scroll when menu open */
 .body-no-scroll { overflow: hidden !important; }
+
 
 
 
