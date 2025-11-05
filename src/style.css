@@ -28,8 +28,8 @@
     opacity: 0;
     transform: scale(1);
     transition: opacity 0.5s ease, bottom 0.5s ease, transform 0.3s ease;
-    overflow: visible !important; /* ensure elements outside are visible */
-    isolation: isolate; /* prevent z-index stacking issues */
+    overflow: visible !important; 
+    isolation: isolate; 
   } */
 
   /* Visible toast */
@@ -1118,6 +1118,7 @@ a {
 
 /* Prevent body scroll when menu open */
 .body-no-scroll { overflow: hidden !important; }
+
 
 
 
