@@ -56,8 +56,8 @@
   #toast-close {
     display: none;
     position: absolute;
-    top: -18px;
-    right: -18px;
+    top: -14px;
+    right: -14px;
     background: rgba(255, 255, 255, 0.15);
     border: 1px solid rgba(255, 255, 255, 0.4);
     color: #fff;
@@ -1074,6 +1074,7 @@ a {
 
 /* Prevent body scroll when menu open */
 .body-no-scroll { overflow: hidden !important; }
+
 
 
 
