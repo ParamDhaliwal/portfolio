@@ -44,8 +44,8 @@
     opacity: 0;
     bottom: 0;
     transition:
-      opacity 0.4s ease,
-      bottom 0.4s cubic-bezier(0.45, 0, 0.55, 1);
+      opacity 1s ease,
+      bottom 1s cubic-bezier(0.45, 0, 0.55, 1);
   }
 
   /* Hover enlarges the toast */
@@ -55,7 +55,7 @@
   }
 
   /* Close button (hidden by default) */
-  #toast-close {
+  /* #toast-close {
     display: none;
     position: absolute;
     top: -14px;
@@ -71,17 +71,17 @@
     height: 28px;
     backdrop-filter: blur(6px);
     transition: all 0.25s ease;
-  }
+  } */
 
   /* Show close button on hover */
-  #toast:hover #toast-close {
+  /* #toast:hover #toast-close {
     display: block;
   }
 
   #toast-close:hover {
     opacity: 1;
     transform: scale(1.2);
-  }
+  } */
 
 /* Header (desktop-first) */
 .header {
@@ -1076,6 +1076,7 @@ a {
 
 /* Prevent body scroll when menu open */
 .body-no-scroll { overflow: hidden !important; }
+
 
 
 
