@@ -17,27 +17,32 @@
 // }
 
 // Show toast after page load
-window.addEventListener('load', () => {
-const toast = document.getElementById('toast');
-const closeBtn = document.getElementById('toast-close');
+  window.addEventListener('load', () => {
+    const toast = document.getElementById('toast');
+    const closeBtn = document.getElementById('close-btn');
 
-// Show after 1.5 seconds
-setTimeout(() => {
-  toast.classList.add('show');
+    // Show after 1 seconds
+    setTimeout(() => {
+      toast.classList.add('show');
 
-  // Auto-hide after 10 seconds
-  setTimeout(() => {
-    toast.classList.remove('show');
-    toast.classList.add('hide');
-  }, 10000);
-}, 1500);
+      // Auto-hide after 8 seconds
+      setTimeout(() => hideToast(), 8000);
+    }, 1000);
 
-// Allow manual close
-closeBtn.addEventListener('click', () => {
-  toast.classList.remove('show');
-  toast.classList.add('hide');
-});
-});
+    // Manual close
+    closeBtn.addEventListener('click', hideToast);
+
+    function hideToast() {
+      toast.classList.remove('show');
+      toast.classList.add('hide');
+
+      // Wait for animation to finish before hiding completely
+      setTimeout(() => {
+        toast.classList.remove('hide');
+        toast.style.visibility = 'hidden';
+      }, 400);
+    }
+  });
 
 const hamburger = document.querySelector('.hamburger');
 const navMenu   = document.querySelector('.nav-menu');
@@ -231,6 +236,7 @@ function scrollCerts(direction) {
 document.addEventListener('DOMContentLoaded', type);
 
 document.addEventListener('DOMContentLoaded', type);
+
 
 
 
