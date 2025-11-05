@@ -53,8 +53,13 @@
 
   /* Hover enlarges the toast */
   #toast:hover {
-    transform: scale(1.20);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5), 0 0 25px rgba(0, 200, 255, 0.4);
+    transform: scale(1.15);
+    /* box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5), 0 0 25px rgba(0, 200, 255, 0.4); */
+	  box-shadow:
+	  0 0 35px rgba(255, 165, 0, 0.7),
+      0 0 65px rgba(255, 0, 200, 0.6),
+      0 0 90px rgba(0, 180, 255, 0.5),
+      0 0 120px rgba(255, 165, 0, 0.35);
   }
 
   /* Close button (hidden by default) */
@@ -1074,6 +1079,7 @@ a {
 
 /* Prevent body scroll when menu open */
 .body-no-scroll { overflow: hidden !important; }
+
 
 
 
