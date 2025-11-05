@@ -39,11 +39,13 @@
     bottom: 50px;
   }
 
-  /* Exit animation — slides down fast */
+    /* When hiding */
   #toast.hide {
-    bottom: -100px;
     opacity: 0;
-    transition: bottom 0.4s cubic-bezier(0.55, 0, 0.55, 0.2), opacity 0.3s;
+    bottom: 0;
+    transition:
+      opacity 0.4s ease,
+      bottom 0.4s cubic-bezier(0.45, 0, 0.55, 1);
   }
 
   /* Hover enlarges the toast */
@@ -1074,6 +1076,7 @@ a {
 
 /* Prevent body scroll when menu open */
 .body-no-scroll { overflow: hidden !important; }
+
 
 
 
