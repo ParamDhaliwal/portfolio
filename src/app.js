@@ -17,14 +17,14 @@
 // }
 
 // Show toast after page load
-  window.addEventListener('load', () => {
+window.addEventListener('load', () => {
     const toast = document.getElementById('toast');
 
-    // Show after 2 seconds
+    // Show after 1 second
     setTimeout(() => {
       toast.classList.add('show');
 
-      // Auto-hide after 3 seconds
+      // Auto-hide after 8 seconds
       setTimeout(() => hideToast(), 8000);
     }, 1000);
 
@@ -32,11 +32,16 @@
       toast.classList.remove('show');
       toast.classList.add('hide');
 
-      // Wait for animation to finish before fully hiding
-      setTimeout(() => {
-        toast.classList.remove('hide');
+      // Listen for transition end before hiding completely
+      toast.addEventListener('transitionend', onTransitionEnd);
+    }
+
+    function onTransitionEnd(e) {
+      if (e.propertyName === 'bottom') { // wait until bottom transition ends
         toast.style.visibility = 'hidden';
-      }, 1000);
+        toast.classList.remove('hide');
+        toast.removeEventListener('transitionend', onTransitionEnd);
+      }
     }
   });
 
@@ -232,6 +237,7 @@ function scrollCerts(direction) {
 document.addEventListener('DOMContentLoaded', type);
 
 document.addEventListener('DOMContentLoaded', type);
+
 
 
 
