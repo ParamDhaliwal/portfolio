@@ -697,31 +697,55 @@ p {
     color: #808080;
 }
 
-.social{
-	position: fixed;
-	top:60%;
-	right:0px;
-	transform:translateY(-50%);
+.social {
+  position: fixed;
+  top: 60%;
+  right: 10px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  z-index: 999;
 }
-.social a{
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	width:45px;
-	height:45px;
-	margin:4px;
-	padding: 5px;
-	background-color:#1c1d25;
-	box-shadow:2px 2px 12px rgba(0,0,0,0.2);
-    border-radius: 20px;
+
+.social a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+  margin: 6px 0;
+  border-radius: 18px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+
+  /* Frosted-glass Siri-like style */
+  background: rgba(50, 50, 50, 0.35);
+  backdrop-filter: blur(10px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4),
+              0 0 10px rgba(0, 150, 255, 0.3);
+  
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
 }
 
 /* .social a:hover{
 	background-color:coral;
 	transition:all ease 0.5s;
 } */
+/* Hover state — glowing orange but translucent */
+.social a:hover {
+  transform: scale(1.15);
+  background: rgba(236, 78, 26, 0.6); /* your color but transparent */
+  box-shadow: 0 6px 20px rgba(236, 78, 26, 0.5),
+              0 0 15px rgba(236, 78, 26, 0.4);
+  border-color: rgba(255, 255, 255, 0.4);
+}
 
-.social-git a:hover{
+/* .social-git a:hover{
 	background-color: #ec4e1a;
 	transition:all ease 0.5s;
 }
@@ -734,7 +758,7 @@ p {
 .social-gmail a:hover{
 	background-color:#ec4e1a;
 	transition:all ease 0.5s;
-}
+} */
 
 .social i{
 	font-size:20px;
@@ -1118,6 +1142,7 @@ a {
 
 /* Prevent body scroll when menu open */
 .body-no-scroll { overflow: hidden !important; }
+
 
 
 
