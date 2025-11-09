@@ -649,7 +649,7 @@ p {
     color: #808080;
 } */
 
-.button {
+/* .button {
 	display: inline-block;
 	width: 160px;
 	height: 44px;
@@ -695,7 +695,89 @@ p {
 .button-resume:active {
     background-color: #1f2022;
     color: #808080;
+} */
+
+/* Primary Button (Orange Siri-style) */
+.button {
+  display: inline-block;
+  width: 160px;
+  height: 44px;
+  border-radius: 30px;
+  color: white;
+  text-align: center;
+  line-height: 44px;
+  font-size: 18px;
+  font-weight: 400;
+  text-decoration: none;
+
+  /* Frosted glass base */
+  background: rgba(236, 78, 26, 0.5);
+  backdrop-filter: blur(10px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 8px 24px rgba(236, 78, 26, 0.4),
+              0 0 16px rgba(236, 78, 26, 0.3);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
+  margin-top: 20px;
 }
+
+.button:hover {
+  background: rgba(236, 78, 26, 0.65);
+  transform: scale(1.08) translateY(-2px);
+  box-shadow: 0 8px 28px rgba(236, 78, 26, 0.6),
+              0 0 20px rgba(236, 78, 26, 0.45);
+}
+
+.button:active {
+  background: rgba(236, 78, 26, 0.3);
+  transform: scale(1) translateY(0);
+  box-shadow: 0 4px 12px rgba(236, 78, 26, 0.25);
+}
+
+
+/* Resume Button (Blue frosted variant) */
+.button-resume {
+  display: inline-block;
+  width: 140px;
+  height: 36px;
+  border-radius: 30px;
+  color: #fff;
+  text-align: center;
+  line-height: 36px;
+  font-size: 16px;
+  font-weight: 400;
+  text-decoration: none;
+
+  /* Frosted glass base */
+  background: rgba(78, 95, 121, 0.5);
+  backdrop-filter: blur(10px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 8px 24px rgba(78, 95, 121, 0.4),
+              0 0 16px rgba(78, 95, 121, 0.3);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
+  margin-top: 20px;
+}
+
+.button-resume:hover {
+  background: rgba(36, 52, 77, 0.6);
+  transform: scale(1.08) translateY(-2px);
+  box-shadow: 0 8px 28px rgba(36, 52, 77, 0.6),
+              0 0 20px rgba(36, 52, 77, 0.45);
+}
+
+.button-resume:active {
+  background: rgba(31, 32, 34, 0.4);
+  transform: scale(1) translateY(0);
+  box-shadow: 0 4px 12px rgba(31, 32, 34, 0.25);
+}
+
 
 .social {
   position: fixed;
@@ -1142,6 +1224,7 @@ a {
 
 /* Prevent body scroll when menu open */
 .body-no-scroll { overflow: hidden !important; }
+
 
 
 
