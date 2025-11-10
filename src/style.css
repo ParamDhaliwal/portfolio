@@ -84,7 +84,7 @@
   } */
 
 .toast-msg {
-	color: AntiqueWhite;
+	color: #ec4e1a;
 }
 
 #toast {
@@ -1228,6 +1228,7 @@ a {
 
 /* Prevent body scroll when menu open */
 .body-no-scroll { overflow: hidden !important; }
+
 
 
 
