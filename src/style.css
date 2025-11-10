@@ -717,7 +717,7 @@ p {
 
   /* Frosted glass base */
   background: rgba(236, 78, 26, 0.01);
-  backdrop-filter: blur(10px) saturate(180%);
+  backdrop-filter: blur(1px) saturate(180%);
   border: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0 4px 12px rgba(236, 78, 26, 0.2),
             0 0 8px rgba(236, 78, 26, 0.1);
@@ -1229,6 +1229,7 @@ a {
 
 /* Prevent body scroll when menu open */
 .body-no-scroll { overflow: hidden !important; }
+
 
 
 
