@@ -84,7 +84,7 @@
   } */
 
 #toast {
-	color: #FF8C00;
+	color: AntiqueWhite;
     visibility: hidden;
     min-width: 280px;
     padding: 16px 24px;
@@ -1225,6 +1225,7 @@ a {
 
 /* Prevent body scroll when menu open */
 .body-no-scroll { overflow: hidden !important; }
+
 
 
 
