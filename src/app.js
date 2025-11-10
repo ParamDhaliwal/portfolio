@@ -20,13 +20,13 @@
 window.addEventListener('load', () => {
     const toast = document.getElementById('toast');
 
-    // Show after 1 second
+    // Show after 0.5 second
     setTimeout(() => {
       toast.classList.add('show');
 
       // Auto-hide after 8 seconds
       setTimeout(() => hideToast(), 8000);
-    }, 1000);
+    }, 500);
 
     function hideToast() {
       toast.classList.remove('show');
@@ -237,6 +237,7 @@ function scrollCerts(direction) {
 document.addEventListener('DOMContentLoaded', type);
 
 document.addEventListener('DOMContentLoaded', type);
+
 
 
 
