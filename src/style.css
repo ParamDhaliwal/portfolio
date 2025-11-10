@@ -83,9 +83,9 @@
     transform: scale(1.2);
   } */
 
-.toast-msg {
+/* .toast-msg {
 	color: #ec4e1a;
-}
+} */
 
 #toast {
     visibility: hidden;
@@ -1228,6 +1228,7 @@ a {
 
 /* Prevent body scroll when menu open */
 .body-no-scroll { overflow: hidden !important; }
+
 
 
 
