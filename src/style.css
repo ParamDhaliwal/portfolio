@@ -109,6 +109,7 @@
     transition:
       opacity 0.4s ease,
       bottom 0.4s cubic-bezier(0.55, 0, 0.55, 0.2);
+	text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
   }
 
   /* Show toast */
@@ -1228,6 +1229,7 @@ a {
 
 /* Prevent body scroll when menu open */
 .body-no-scroll { overflow: hidden !important; }
+
 
 
 
