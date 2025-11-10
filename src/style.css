@@ -711,11 +711,11 @@ p {
   text-decoration: none;
 
   /* Frosted glass base */
-  background: rgba(236, 78, 26, 0.1);
+  background: rgba(236, 78, 26, 0);
   backdrop-filter: blur(10px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  box-shadow: 0 4px 12px rgba(236, 78, 26, 0.25),
-            0 0 8px rgba(236, 78, 26, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 12px rgba(236, 78, 26, 0.2),
+            0 0 8px rgba(236, 78, 26, 0.1);
 
   transition:
     transform 0.2s ease,
@@ -1224,6 +1224,7 @@ a {
 
 /* Prevent body scroll when menu open */
 .body-no-scroll { overflow: hidden !important; }
+
 
 
 
