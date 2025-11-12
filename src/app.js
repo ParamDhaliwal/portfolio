@@ -16,6 +16,62 @@
 //     navMenu.classList.remove("active");
 // }
 
+const chatToggle = document.getElementById('chat-toggle');
+const chatContainer = document.getElementById('chat-container');
+const chatBox = document.getElementById('chat-box');
+const chatInput = document.getElementById('chat-input');
+const chatSend = document.getElementById('chat-send');
+
+const sessionId = 'user1';
+
+// Toggle chat visibility
+chatToggle.addEventListener('click', () => {
+  chatContainer.style.display = chatContainer.style.display === 'flex' ? 'none' : 'flex';
+});
+
+// Append messages
+function appendMessage(text, sender) {
+  const msgDiv = document.createElement('div');
+  msgDiv.className = 'message ' + sender;
+  msgDiv.innerText = text;
+  chatBox.appendChild(msgDiv);
+  chatBox.scrollTop = chatBox.scrollHeight;
+}
+
+// Send message to backend
+async function sendMessage(message) {
+  appendMessage(message, 'user');
+  try {
+    const response = await fetch('http://127.0.0.1:5000/chat', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ message, session_id: sessionId })
+    });
+    const data = await response.json();
+    appendMessage(data.response, 'bot');
+  } catch (err) {
+    appendMessage('Error: Could not reach server', 'bot');
+    console.error(err);
+  }
+}
+
+// Send message on Enter key
+chatInput.addEventListener('keypress', (e) => {
+  if (e.key === 'Enter' && chatInput.value.trim() !== '') {
+    sendMessage(chatInput.value.trim());
+    chatInput.value = '';
+  }
+});
+
+// Send message on button click
+chatSend.addEventListener('click', () => {
+  if (chatInput.value.trim() !== '') {
+    sendMessage(chatInput.value.trim());
+    chatInput.value = '';
+  }
+});
+
+
 // Show toast after page load
 window.addEventListener('load', () => {
     const toast = document.getElementById('toast');
@@ -237,6 +293,7 @@ function scrollCerts(direction) {
 document.addEventListener('DOMContentLoaded', type);
 
 document.addEventListener('DOMContentLoaded', type);
+
 
 
 
