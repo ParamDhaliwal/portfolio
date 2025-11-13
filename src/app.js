@@ -50,7 +50,7 @@ async function sendMessage(message) {
     const data = await response.json();
     appendMessage(data.response, 'bot');
   } catch (err) {
-    appendMessage(`Hey there! I’m Skylar, Param’s AI portfolio assistant — currently learning and under development 👩‍💻\nWhat would you like to know about Param?`, 'bot');
+    appendMessage(`Hey there! I’m Skylar, Param’s AI Assistant — \ncurrently learning and under development 👩‍💻`, 'bot');
     console.error(err);
   }
 }
@@ -293,6 +293,7 @@ function scrollCerts(direction) {
 document.addEventListener('DOMContentLoaded', type);
 
 document.addEventListener('DOMContentLoaded', type);
+
 
 
 
