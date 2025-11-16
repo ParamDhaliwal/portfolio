@@ -90,31 +90,71 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
 
-/* --- Floating toggle button --- */
+/* --- Floating magical chat toggle button --- */
 #chat-toggle {
-	position: fixed;
-	bottom: 24px;
-	right: 24px;
-	width: 62px;
-	height: 62px;
-	border-radius: 50%;
-	background: rgba(255, 255, 255, 0.15);
-	color: #fff;
-	font-size: 28px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	cursor: pointer;
-	backdrop-filter: blur(12px);
-	border: 1px solid rgba(255, 255, 255, 0.3);
-	box-shadow: 0 8px 25px rgba(0,0,0,0.25);
-	transition: all 0.3s ease;
-	z-index: 1000;
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.28);
+
+  transition: all 0.3s ease;
+  z-index: 1000;
+  position: fixed;
+
+  /* Animated glow */
+  animation: pulseGlow 3s infinite ease-in-out;
 }
 
+/* Hover: makes it feel interactive and alive */
 #chat-toggle:hover {
-	transform: scale(1.08);
-	background: rgba(255, 255, 255, 0.25);
+  transform: scale(1.10) rotate(3deg);
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 10px 36px rgba(0, 140, 255, 0.55);
+}
+
+/* Outer glowing ring effect */
+#chat-toggle::before {
+  content: "";
+  position: absolute;
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 0deg,
+    rgba(0, 157, 255, 0.7),
+    rgba(255, 255, 255, 0.3),
+    rgba(0, 157, 255, 0.7)
+  );
+  filter: blur(18px);
+  opacity: 0.55;
+  z-index: -1;
+  animation: rotateGlow 6s linear infinite;
+}
+
+/* Pulse animation */
+@keyframes pulseGlow {
+  0% { box-shadow: 0 8px 25px rgba(0, 157, 255, 0.35); }
+  50% { box-shadow: 0 8px 30px rgba(0, 157, 255, 0.55); }
+  100% { box-shadow: 0 8px 25px rgba(0, 157, 255, 0.35); }
+}
+
+/* Rotation animation for outer ring */
+@keyframes rotateGlow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 /* --- Chat container --- */
@@ -1381,6 +1421,7 @@ a {
 
 /* Prevent body scroll when menu open */
 .body-no-scroll { overflow: hidden !important; }
+
 
 
 
