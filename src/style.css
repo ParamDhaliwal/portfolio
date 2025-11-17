@@ -90,72 +90,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
 
-/* --- Floating toggle button --- */
-#chat-toggle {
-  position: fixed;
-  bottom: 24px;
-  right: 24px;
-  width: 62px;
-  height: 62px;
-  border-radius: 50%;
-  background: rgba(50, 50, 50, 0.2);
-  backdrop-filter: blur(10px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.45);
-  color: #fff;
-  font-size: 28px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  cursor: pointer;
-  transition: 0.35s ease;
-  z-index: 1000;
-
-  /* subtle warm aura */
-  /* box-shadow:
-    0 8px 32px rgba(0, 0, 0, 0.4),
-    0 0 18px rgba(255, 140, 0, 0.35); */
-
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
-
-  /* Light breathing animation */
-  animation: warmPulse 3.2s ease-in-out infinite;
-}
-
-#chat-toggle:hover {
-	/* transform: scale(1.1);
-	box-shadow: 0 10px 36px rgba(0, 0, 0, 0.45),
-				0 0 26px rgba(255, 160, 0, 0.55); */
-	transform: scale(1.15);
-	background: rgba(236, 78, 26, 0.6); /* your color but transparent */
-	box-shadow: 0 6px 20px rgba(236, 78, 26, 0.5),
-			  	0 0 15px rgba(236, 78, 26, 0.4);
-	border-color: rgba(255, 255, 255, 1);
-}
-
-/* --- Slight warm breathing glow --- */
-/* @keyframes warmPulse {
-  0% {
-    box-shadow:
-      0 8px 32px rgba(0, 0, 0, 0.4),
-      0 0 18px rgba(255, 140, 0, 0.25);
-  }
-  50% {
-    box-shadow:
-      0 8px 32px rgba(0, 0, 0, 0.45),
-      0 0 26px rgba(255, 150, 0, 0.45);
-  }
-  100% {
-    box-shadow:
-      0 8px 32px rgba(0, 0, 0, 0.4),
-      0 0 18px rgba(255, 140, 0, 0.25);
-  }
-} */
-
-
-
-/* --- Chat container --- */
+/* --- Chat container (glass dark like iOS) --- */
 #chat-container {
 	position: fixed;
 	bottom: 100px;
@@ -165,115 +100,133 @@
 	display: none;
 	flex-direction: column;
 	overflow: hidden;
-	border-radius: 20px;
+	border-radius: 22px;
 	font-family: 'Inter', sans-serif;
-	background: rgba(50, 50, 50, 0.2);
-	backdrop-filter: blur(18px) saturate(180%);
-	border: 1px solid rgba(255, 255, 255, 0.25);
-	box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+
+	/* iOS dark mode glass */
+	background: rgba(28, 28, 30, 0.55);
+	backdrop-filter: blur(22px) saturate(180%);
+	border: 1px solid rgba(255, 255, 255, 0.08);
+	box-shadow: 0 8px 35px rgba(0,0,0,0.85);
+
 	z-index: 999;
 }
 
-/* --- Chat header --- */
+/* --- Header (iOS navigation bar style) --- */
 #chat-header {
-	background: linear-gradient(135deg, rgba(255,255,255,0.15), rgba(255,255,255,0.05));
+	background: rgba(44, 44, 46, 0.55);
+	backdrop-filter: blur(18px);
 	color: #fff;
-	padding: 14px 14px;
+	padding: 14px;
 	font-weight: 600;
 	font-size: 15px;
 	text-align: center;
 	letter-spacing: 0.4px;
-	border-bottom: 1px solid rgba(255,255,255,0.2);
+	border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
-/* --- Chat messages area --- */
+/* --- Chat box --- */
 #chat-box {
 	flex: 1;
 	padding: 16px;
 	overflow-y: auto;
 	background: transparent;
-	scrollbar-width: thin;
-	scrollbar-color: rgba(255,255,255,0.2) transparent;
+
 	display: flex;
 	flex-direction: column;
+
+	scrollbar-width: thin;
+	scrollbar-color: rgba(255,255,255,0.15) transparent;
 }
 
 #chat-box::-webkit-scrollbar {
-	width: 10px;
+	width: 8px;
 }
 
 #chat-box::-webkit-scrollbar-thumb {
-	background: rgba(255,255,255,0.2);
-	border-radius: 3px;
+	background: rgba(255,255,255,0.15);
+	border-radius: 12px;
 }
 
 /* --- Chat bubbles --- */
 .message {
-	margin: 8px 0;
-	padding: 12px 16px;
-	max-width: 75%;
-	border-radius: 18px;
+	margin: 6px 0;
+	padding: 10px 14px;
+	max-width: 78%;
 	font-size: 14px;
 	line-height: 1.45;
-	backdrop-filter: blur(6px);
-	word-wrap: break-word;
-	text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+	border-radius: 18px;
+	overflow-wrap: break-word;
+
+	/* iOS bubble shadow */
+	box-shadow: 0 2px 4px rgba(0,0,0,0.25);
 }
 
+/* --- User bubble (iMessage blue) --- */
 .user {
-	background: rgba(0, 123, 255, 0.5);
-	color: #fff;
 	align-self: flex-end;
-	border: 1px solid rgba(255,255,255,0.25);
-	border-bottom-right-radius: 4px;
+	color: #fff;
+
+	background: linear-gradient(135deg, #0A84FF, #0066FF);
+	border-bottom-right-radius: 6px;
 }
 
+/* --- Bot bubble (iMessage gray) --- */
 .bot {
-	background: rgba(255, 255, 255, 0.15);
-	color: #eaeaea;
 	align-self: flex-start;
-	border: 1px solid rgba(255,255,255,0.2);
-	border-bottom-left-radius: 4px;
+	color: #fff;
+
+	background: rgba(99, 99, 102, 0.65);
+	border-bottom-left-radius: 6px;
 }
 
-/* --- Input area --- */
+/* --- Input area (iOS textfield dock) --- */
 #chat-input-container {
 	display: flex;
-	border-top: 1px solid rgba(255,255,255,0.2);
-	background: rgba(255,255,255,0.05);
-	backdrop-filter: blur(12px);
+	align-items: center;
+	padding: 8px;
+	gap: 6px;
+
+	background: rgba(44, 44, 46, 0.7);
+	backdrop-filter: blur(18px);
+	border-top: 1px solid rgba(255,255,255,0.08);
 }
 
+/* --- Input field --- */
 #chat-input {
 	flex: 1;
-	padding: 12px;
+	padding: 10px 14px;
 	border: none;
 	outline: none;
-	font-size: 14px;
+	border-radius: 18px;
+
+	background: rgba(58, 58, 60, 0.7);
 	color: #fff;
-	background: transparent;
-	font-family: 'Inter', sans-serif;
+
+	font-size: 14px;
 }
 
 #chat-input::placeholder {
-	color: rgba(255,255,255,0.5);
-	text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+	color: rgba(255,255,255,0.38);
 }
 
+/* --- Send button (iOS style) --- */
 #chat-send {
-	padding: 0 20px;
-	background: rgba(0, 123, 255, 0.6);
-	color: white;
+	padding: 10px 16px;
+	border-radius: 18px;
 	border: none;
 	cursor: pointer;
-	font-size: 15px;
+
+	background: #0A84FF;
+	color: white;
+
+	font-size: 14px;
 	font-weight: 500;
-	border-radius: 0 0 18px 0;
-	transition: all 0.25s ease;
+	transition: 0.2s;
 }
 
 #chat-send:hover {
-	background: rgba(0, 123, 255, 0.8);
+	background: #0066ff;
 	transform: translateY(-1px);
 }
 
@@ -1421,6 +1374,7 @@ a {
 
 /* Prevent body scroll when menu open */
 .body-no-scroll { overflow: hidden !important; }
+
 
 
 
