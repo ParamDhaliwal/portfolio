@@ -131,7 +131,7 @@
 }
 
 /* --- Slight warm breathing glow --- */
-@keyframes warmPulse {
+/* @keyframes warmPulse {
   0% {
     box-shadow:
       0 8px 32px rgba(0, 0, 0, 0.4),
@@ -147,7 +147,7 @@
       0 8px 32px rgba(0, 0, 0, 0.4),
       0 0 18px rgba(255, 140, 0, 0.25);
   }
-}
+} */
 
 
 
@@ -1415,6 +1415,7 @@ a {
 
 /* Prevent body scroll when menu open */
 .body-no-scroll { overflow: hidden !important; }
+
 
 
 
