@@ -182,6 +182,53 @@
     font-family: 'Poppins', sans-serif;
 }
 
+/* --- Header (iOS navigation bar style) --- */
+#chat-header {
+    background: rgba(44, 44, 46, 0.55);
+    backdrop-filter: blur(18px);
+    color: #fff;
+    padding: 12px 14px;
+    font-weight: 500; /* lighter */
+    font-size: 15px;
+    text-align: center;
+    letter-spacing: 0.4px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* --- Buttons (arrow + email) --- */
+.header-btn {
+    font-size: 20px;
+    cursor: pointer;
+    color: #0A84FF; /* iMessage blue bubble color */
+    user-select: none;
+}
+
+/* --- Avatar circle ─ iOS style --- */
+.header-avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 8px;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+/* --- Center title --- */
+.header-title {
+    flex-grow: 1;
+    text-align: center;
+    font-weight: 500; /* lighter than 600 */
+    font-size: 15px;
+    color: #fff;
+    margin-left: -28px; 
+    /* Negative margin recenters since arrow + avatar push it */
+}
+
+
 /* Left arrow (back button) */
 #chat-back {
     font-size: 18px;
@@ -1504,6 +1551,7 @@ a {
 
 /* Prevent body scroll when menu open */
 .body-no-scroll { overflow: hidden !important; }
+
 
 
 
