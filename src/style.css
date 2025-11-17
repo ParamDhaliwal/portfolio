@@ -162,11 +162,12 @@
 	backdrop-filter: blur(18px);
 	color: #fff;
 	padding: 14px;
-	font-weight: 600;
+	font-weight: 400;
 	font-size: 15px;
 	text-align: center;
 	letter-spacing: 0.4px;
 	border-bottom: 1px solid rgba(255,255,255,0.1);
+	font-family: 'Poppins', sans-serif;
 }
 
 /* --- Chat box --- */
@@ -1418,6 +1419,7 @@ a {
 
 /* Prevent body scroll when menu open */
 .body-no-scroll { overflow: hidden !important; }
+
 
 
 
