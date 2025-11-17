@@ -124,10 +124,14 @@
 }
 
 #chat-toggle:hover {
-  transform: scale(1.1);
-  box-shadow:
-    0 10px 36px rgba(0, 0, 0, 0.45),
-    0 0 26px rgba(255, 160, 0, 0.55);
+	/* transform: scale(1.1);
+	box-shadow: 0 10px 36px rgba(0, 0, 0, 0.45),
+				0 0 26px rgba(255, 160, 0, 0.55); */
+	transform: scale(1.15);
+	background: rgba(236, 78, 26, 0.6); /* your color but transparent */
+	box-shadow: 0 6px 20px rgba(236, 78, 26, 0.5),
+			  	0 0 15px rgba(236, 78, 26, 0.4);
+	border-color: rgba(50, 50, 50, 2);
 }
 
 /* --- Slight warm breathing glow --- */
@@ -1012,7 +1016,7 @@ p {
 /* Hover state — glowing orange but translucent */
 .social a:hover {
   transform: scale(1.15);
-  background: rgba(236, 78, 26, 0.6); /* your color but transparent */
+  background: rgba(236, 78, 26, 0.6);
   box-shadow: 0 6px 20px rgba(236, 78, 26, 0.5),
               0 0 15px rgba(236, 78, 26, 0.4);
   border-color: rgba(255, 255, 255, 0.4);
