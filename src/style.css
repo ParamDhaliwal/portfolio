@@ -157,7 +157,7 @@
 }
 
 /* --- Header (iOS navigation bar style) --- */
-#chat-header {
+/* #chat-header {
 	background: rgba(44, 44, 46, 0.55);
 	backdrop-filter: blur(18px);
 	color: #fff;
@@ -168,7 +168,92 @@
 	letter-spacing: 0.4px;
 	border-bottom: 1px solid rgba(255,255,255,0.1);
 	font-family: 'Poppins', sans-serif;
+} */
+
+#chat-header {
+    background: rgba(44, 44, 46, 0.55);
+    backdrop-filter: blur(18px);
+    color: #fff;
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    font-family: 'Poppins', sans-serif;
 }
+
+/* Left arrow (back button) */
+#chat-back {
+    font-size: 18px;
+    cursor: pointer;
+    opacity: 0.9;
+    transition: 0.2s ease;
+}
+
+#chat-back:hover {
+    opacity: 1;
+    transform: translateX(-2px);
+}
+
+/* Avatar */
+#chat-avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid rgba(255,255,255,0.4);
+}
+
+/* Title (Skylar) */
+#chat-title {
+    font-size: 15px;
+    font-weight: 400; /* lighter, modern */
+    flex-grow: 1;     /* pushes email icon to right */
+}
+
+/* Email icon */
+#chat-email {
+    font-size: 18px;
+    cursor: pointer;
+    opacity: 0.9;
+    transition: 0.2s ease;
+}
+
+#chat-email:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* Blue bubble icon */
+.bubble-icon {
+    background: rgba(0, 122, 255, 0.85); /* iMessage blue */
+    color: #fff;
+    font-size: 15px;
+    padding: 6px 10px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    border: 1px solid rgba(255,255,255,0.35);
+    backdrop-filter: blur(12px);
+    box-shadow: 
+        0 4px 12px rgba(0, 0, 0, 0.35),
+        0 0 12px rgba(0, 122, 255, 0.5);
+
+    transition: all 0.25s ease;
+}
+
+/* Hover behavior */
+.bubble-icon:hover {
+    transform: scale(1.08);
+    background: rgba(0, 122, 255, 1);
+    box-shadow: 
+        0 6px 18px rgba(0, 0, 0, 0.45),
+        0 0 16px rgba(0, 122, 255, 0.6);
+}
+
 
 /* --- Chat box --- */
 #chat-box {
@@ -1419,6 +1504,7 @@ a {
 
 /* Prevent body scroll when menu open */
 .body-no-scroll { overflow: hidden !important; }
+
 
 
 
