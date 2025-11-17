@@ -131,7 +131,7 @@
 	background: rgba(236, 78, 26, 0.6); /* your color but transparent */
 	box-shadow: 0 6px 20px rgba(236, 78, 26, 0.5),
 			  	0 0 15px rgba(236, 78, 26, 0.4);
-	border-color: rgba(50, 50, 50, 2);
+	border-color: rgba(255, 255, 255, 1);
 }
 
 /* --- Slight warm breathing glow --- */
@@ -1419,6 +1419,7 @@ a {
 
 /* Prevent body scroll when menu open */
 .body-no-scroll { overflow: hidden !important; }
+
 
 
 
