@@ -194,6 +194,8 @@
 	background: transparent;
 	scrollbar-width: thin;
 	scrollbar-color: rgba(255,255,255,0.2) transparent;
+	display: flex;
+	flex-direction: column;
 }
 
 #chat-box::-webkit-scrollbar {
@@ -1419,6 +1421,7 @@ a {
 
 /* Prevent body scroll when menu open */
 .body-no-scroll { overflow: hidden !important; }
+
 
 
 
