@@ -90,6 +90,50 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
 
+/* --- Floating toggle button --- */
+#chat-toggle {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  background: rgba(50, 50, 50, 0.2);
+  backdrop-filter: blur(10px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  color: #fff;
+  font-size: 28px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  transition: 0.35s ease;
+  z-index: 1000;
+
+  /* subtle warm aura */
+  /* box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.4),
+    0 0 18px rgba(255, 140, 0, 0.35); */
+
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+
+  /* Light breathing animation */
+  animation: warmPulse 3.2s ease-in-out infinite;
+}
+
+#chat-toggle:hover {
+	/* transform: scale(1.1);
+	box-shadow: 0 10px 36px rgba(0, 0, 0, 0.45),
+				0 0 26px rgba(255, 160, 0, 0.55); */
+	transform: scale(1.15);
+	background: rgba(236, 78, 26, 0.6); /* your color but transparent */
+	box-shadow: 0 6px 20px rgba(236, 78, 26, 0.5),
+			  	0 0 15px rgba(236, 78, 26, 0.4);
+	border-color: rgba(255, 255, 255, 1);
+}
+
 /* --- Chat container (glass dark like iOS) --- */
 #chat-container {
 	position: fixed;
@@ -1374,6 +1418,7 @@ a {
 
 /* Prevent body scroll when menu open */
 .body-no-scroll { overflow: hidden !important; }
+
 
 
 
