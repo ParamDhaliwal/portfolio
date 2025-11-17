@@ -200,11 +200,12 @@
 }
 
 /* --- Buttons (arrow + email) --- */
-.back-btn {
+#chat-back-btn {
     font-size: 26px;
     cursor: pointer;
     color: #0A84FF; /* iMessage blue bubble color */
     user-select: none;
+	cursor: pointer;
 }
 
 /* --- Buttons (email) --- */
@@ -1559,6 +1560,7 @@ a {
 
 /* Prevent body scroll when menu open */
 .body-no-scroll { overflow: hidden !important; }
+
 
 
 
