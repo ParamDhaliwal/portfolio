@@ -201,7 +201,7 @@
 
 /* --- Buttons (arrow + email) --- */
 .back-btn {
-    font-size: 20px;
+    font-size: 26px;
     cursor: pointer;
     color: #0A84FF; /* iMessage blue bubble color */
     user-select: none;
@@ -1559,6 +1559,7 @@ a {
 
 /* Prevent body scroll when menu open */
 .body-no-scroll { overflow: hidden !important; }
+
 
 
 
