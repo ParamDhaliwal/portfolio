@@ -21,12 +21,18 @@ const chatContainer = document.getElementById('chat-container');
 const chatBox = document.getElementById('chat-box');
 const chatInput = document.getElementById('chat-input');
 const chatSend = document.getElementById('chat-send');
+const chatBackBtn = document.getElementById('chat-back-btn');
 
 const sessionId = 'user1';
 
 // Toggle chat visibility
 chatToggle.addEventListener('click', () => {
   chatContainer.style.display = chatContainer.style.display === 'flex' ? 'none' : 'flex';
+});
+
+// Back button to ALWAYS close the chat box
+chatBackBtn.addEventListener('click', () => {
+  chatContainer.style.display = 'none';
 });
 
 // Append messages
@@ -293,6 +299,7 @@ function scrollCerts(direction) {
 document.addEventListener('DOMContentLoaded', type);
 
 document.addEventListener('DOMContentLoaded', type);
+
 
 
 
